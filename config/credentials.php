@@ -10,9 +10,9 @@ if(IS_LOCAL) {
   $user = 'root';
   $password = 'markomeje';
 }else {
-  $dbname = 'fastcheckout_db';
-  $user = 'fstchkout_user';
-  $password = '84^7uo3Qf';
+  $dbname = 'kellynel_rubio';
+  $user = 'kellynel_rubio_trfg7483gyfbhej';
+  $password = '5yfehifjb47f6qfaiacvk01923q';
 }
 
 $host = IS_LOCAL ? '127.0.0.1' : 'localhost';

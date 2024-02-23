@@ -126,7 +126,7 @@
                               </a>
                             </li>
                         <li class="header__menu--items mega__menu--items style2">
-                              <a class="header__menu--link" href="shop.html">Shop
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/shop.php">Shop
 
                               </a>
 
@@ -143,7 +143,7 @@
 
 
                           <li class="header__menu--items style2">
-                              <a class="header__menu--link" href="contact.html">Contact </a>
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/contact.php">Contact </a>
                           </li>
                           <?php if(empty($user)): ?>
                             <li class="header__menu--items style2">
@@ -206,7 +206,7 @@
                               </a>
                           </li>
                         <li class="header__menu--items mega__menu--items">
-                              <a class="header__menu--link" href="shop.html">Shop
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/shop.php">Shop
                               </a>
                           </li>
                           <li class="header__menu--items">
@@ -221,7 +221,7 @@
 
 
                           <li class="header__menu--items">
-                              <a class="header__menu--link" href="contact.html">Contact </a>
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/contact.php">Contact </a>
                           </li>
                       </ul>
                   </nav>
@@ -246,7 +246,7 @@
                       <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>">Home</a>
                   </li>
                   <li class="offcanvas__menu_li">
-                      <a class="offcanvas__menu_item" href="shop.html">Shop</a>
+                      <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/shop.php">Shop</a>
                   </li>
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="blog.html">Blog</a>
@@ -255,19 +255,19 @@
                       <a class="offcanvas__menu_item" href="#">Pages</a>
                       <ul class="offcanvas__sub_menu">
                           <li class="offcanvas__sub_menu_li"><a href="about.html" class="offcanvas__sub_menu_item">About Us</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="contact.html" class="offcanvas__sub_menu_item">Contact Us</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/contact.php" class="offcanvas__sub_menu_item">Contact Us</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="cart.html" class="offcanvas__sub_menu_item">Cart Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="portfolio.html" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="wishlist.html" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="login.html" class="offcanvas__sub_menu_item">Login Page</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/login.php" class="offcanvas__sub_menu_item">Login Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="404.html" class="offcanvas__sub_menu_item">Error Page</a></li>
                       </ul>
                   </li>
                   <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.html">About</a></li>
-                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="contact.html">Contact</a></li>
+                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/contact.php">Contact</a></li>
               </ul>
               <div class="offcanvas__account--items">
-                  <a class="offcanvas__account--items__btn d-flex align-items-center" href="login.html">
+                  <a class="offcanvas__account--items__btn d-flex align-items-center" href="<?= BASE_URL; ?>/login.php">
                   <span class="offcanvas__account--items__icon">
                       <svg xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                       </span>
@@ -328,7 +328,7 @@
               </a>
           </li>
           <li class="offcanvas__stikcy--toolbar__list">
-              <a class="offcanvas__stikcy--toolbar__btn" href="shop.html">
+              <a class="offcanvas__stikcy--toolbar__btn" href="<?= BASE_URL; ?>/shop.php">
               <span class="offcanvas__stikcy--toolbar__icon">
                   <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.443" viewBox="0 0 448 512"><path d="M416 32H32A32 32 0 0 0 0 64v384a32 32 0 0 0 32 32h384a32 32 0 0 0 32-32V64a32 32 0 0 0-32-32zm-16 48v152H248V80zm-200 0v152H48V80zM48 432V280h152v152zm200 0V280h152v152z"></path></svg>
                   </span>
