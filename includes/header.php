@@ -1,3 +1,24 @@
+<?php
+
+if (isset($_COOKIE['cart_items'])) {
+    $cart_items_json = $_COOKIE['cart_items'];
+
+    $cart_items = json_decode($cart_items_json, true);
+    $cart_items_count = count($cart_items);
+}else {
+    $cart_items_count = isset($_GET['product_id']) ? 1 : 0;
+}
+
+if (isset($_COOKIE['wishlist'])) {
+    $wishlist_json = $_COOKIE['wishlist'];
+
+    $wishlist = json_decode($wishlist_json, true);
+    $wishlist_count = count($wishlist);
+}else {
+    $wishlist_count = isset($_GET['product_id']) ? 1 : 0;
+}
+?>
+
 <?php include ('includes/session.php'); ?>
 
 <header class="header__section">
@@ -61,7 +82,7 @@
                   </a>
               </div>
               <div class="main__logo">
-                  <a class="main__logo--link" href="<?= BASE_URL; ?>"><img class="main__logo--img" src="./assets/img/rubiologo.png" width="200px"  alt="logo-img"></a>
+                  <a class="main__logo--link" href="<?= BASE_URL; ?>/"><img class="main__logo--img" src="./assets/img/rubiologo.png" width="200px"  alt="logo-img"></a>
               </div>
               <div class="header__search--widget header__sticky--none d-none d-lg-block">
                   <form class="d-flex header__search--form" action="#">
@@ -93,14 +114,14 @@
                           </a>
                       </li>
                       <li class="header__account--items d-none d-lg-block">
-                          <a class="header__account--btn" href="wishlist.html">
+                          <a class="header__account--btn" href="<?= BASE_URL; ?>/wishlist.php">
                               <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
                               <span class="header__account--btn__text"> Wish List</span>
-                              <span class="items__count wishlist">02</span>
+                              <span class="items__count wishlist"><?= $wishlist_count; ?></span>
                           </a>
                       </li>
                       <li class="header__account--items">
-                          <a class="header__account--btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+                          <a class="header__account--btn minicart__open--btn" href="<?= BASE_URL; ?>/cart.php" data-offcanvas>
                               <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 14.706 13.534">
                                   <g  transform="translate(0 0)">
                                   <g >
@@ -111,7 +132,7 @@
                                   </g>
                               </svg>
                               <span class="header__account--btn__text"> My cart</span>
-                              <span class="items__count">02</span>
+                              <span class="items__count"><?= $cart_items_count; ?></span>
                           </a>
                       </li>
                   </ul>
@@ -120,7 +141,7 @@
                   <nav class="header__menu--navigation">
                       <ul class="d-flex">
                           <li class="header__menu--items style2">
-                              <a class="header__menu--link" href="<?= BASE_URL; ?>">Home
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/">Home
 
 
                               </a>
@@ -171,13 +192,13 @@
                           </a>
                       </li>
                       <li class="header__account--items header__account2--items d-none d-lg-block">
-                          <a class="header__account--btn" href="wishlist.html">
+                          <a class="header__account--btn" href="<?= BASE_URL; ?>/wishlist.php">
                               <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
-                              <span class="items__count  wishlist style2">02</span>
+                              <span class="items__count  wishlist style2"><?= $wishlist_count; ?></span>
                           </a>
                       </li>
                       <li class="header__account--items header__account2--items">
-                          <a class="header__account--btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+                          <a class="header__account--btn minicart__open--btn" href="<?= BASE_URL; ?>/cart.php" data-offcanvas>
                               <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 14.706 13.534">
                                   <g  transform="translate(0 0)">
                                   <g >
@@ -187,7 +208,7 @@
                                   </g>
                                   </g>
                               </svg>
-                              <span class="items__count style2">02</span>
+                              <span class="items__count style2"><?= $cart_items_count; ?></span>
                           </a>
                       </li>
                   </ul>
@@ -202,7 +223,7 @@
                   <nav class="header__menu--navigation">
                       <ul class="d-flex">
                             <li class="header__menu--items">
-                              <a class="header__menu--link" href="<?= BASE_URL; ?>">Home
+                              <a class="header__menu--link" href="<?= BASE_URL; ?>/">Home
                               </a>
                           </li>
                         <li class="header__menu--items mega__menu--items">
@@ -235,7 +256,7 @@
   <div class="offcanvas__header">
       <div class="offcanvas__inner">
           <div class="offcanvas__logo">
-              <a class="offcanvas__logo_link" href="<?= BASE_URL; ?>">
+              <a class="offcanvas__logo_link" href="<?= BASE_URL; ?>/">
                   <img src="./assets/img/rubiologo.png" width="300px"  alt="Grocee Logo" width="158" height="36">
               </a>
               <button class="offcanvas__close--btn" data-offcanvas>close</button>
@@ -243,7 +264,7 @@
           <nav class="offcanvas__menu">
               <ul class="offcanvas__menu_ul">
                   <li class="offcanvas__menu_li">
-                      <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>">Home</a>
+                      <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/">Home</a>
                   </li>
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/shop.php">Shop</a>
@@ -256,9 +277,9 @@
                       <ul class="offcanvas__sub_menu">
                           <li class="offcanvas__sub_menu_li"><a href="about.html" class="offcanvas__sub_menu_item">About Us</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/contact.php" class="offcanvas__sub_menu_item">Contact Us</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="cart.html" class="offcanvas__sub_menu_item">Cart Page</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/cart.php" class="offcanvas__sub_menu_item">Cart Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="portfolio.html" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="wishlist.html" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/wishlist.php" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/login.php" class="offcanvas__sub_menu_item">Login Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="404.html" class="offcanvas__sub_menu_item">Error Page</a></li>
                       </ul>
@@ -320,7 +341,7 @@
   <div class="offcanvas__stikcy--toolbar">
       <ul class="d-flex justify-content-between">
           <li class="offcanvas__stikcy--toolbar__list">
-              <a class="offcanvas__stikcy--toolbar__btn" href="<?= BASE_URL; ?>">
+              <a class="offcanvas__stikcy--toolbar__btn" href="<?= BASE_URL; ?>/">
               <span class="offcanvas__stikcy--toolbar__icon">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="21.51" height="21.443" viewBox="0 0 22 17"><path fill="currentColor" d="M20.9141 7.93359c.1406.11719.2109.26953.2109.45703 0 .14063-.0469.25782-.1406.35157l-.3516.42187c-.1172.14063-.2578.21094-.4219.21094-.1406 0-.2578-.04688-.3515-.14062l-.9844-.77344V15c0 .3047-.1172.5625-.3516.7734-.2109.2344-.4687.3516-.7734.3516h-4.5c-.3047 0-.5742-.1172-.8086-.3516-.2109-.2109-.3164-.4687-.3164-.7734v-3.6562h-2.25V15c0 .3047-.11719.5625-.35156.7734-.21094.2344-.46875.3516-.77344.3516h-4.5c-.30469 0-.57422-.1172-.80859-.3516-.21094-.2109-.31641-.4687-.31641-.7734V8.46094l-.94922.77344c-.11719.09374-.24609.14062-.38672.14062-.16406 0-.30468-.07031-.42187-.21094l-.35157-.42187C.921875 8.625.875 8.50781.875 8.39062c0-.1875.070312-.33984.21094-.45703L9.73438.832031C10.1094.527344 10.5312.375 11 .375s.8906.152344 1.2656.457031l8.6485 7.101559zm-3.7266 6.50391V7.05469L11 1.99219l-6.1875 5.0625v7.38281h3.375v-3.6563c0-.3046.10547-.5624.31641-.7734.23437-.23436.5039-.35155.80859-.35155h3.375c.3047 0 .5625.11719.7734.35155.2344.211.3516.4688.3516.7734v3.6563h3.375z"></path></svg>
                   </span>
@@ -344,25 +365,25 @@
               </a>
           </li>
           <li class="offcanvas__stikcy--toolbar__list">
-              <a class="offcanvas__stikcy--toolbar__btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
+              <a class="offcanvas__stikcy--toolbar__btn minicart__open--btn" href="<?= BASE_URL; ?>/cart.php" data-offcanvas>
                   <span class="offcanvas__stikcy--toolbar__icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18.51" height="15.443" viewBox="0 0 18.51 15.443">
                       <path  d="M79.963,138.379l-13.358,0-.56-1.927a.871.871,0,0,0-.6-.592l-1.961-.529a.91.91,0,0,0-.226-.03.864.864,0,0,0-.226,1.7l1.491.4,3.026,10.919a1.277,1.277,0,1,0,1.844,1.144.358.358,0,0,0,0-.049h6.163c0,.017,0,.034,0,.049a1.277,1.277,0,1,0,1.434-1.267c-1.531-.247-7.783-.55-7.783-.55l-.205-.8h7.8a.9.9,0,0,0,.863-.651l1.688-5.943h.62a.936.936,0,1,0,0-1.872Zm-9.934,6.474H68.568c-.04,0-.1.008-.125-.085-.034-.118-.082-.283-.082-.283l-1.146-4.037a.061.061,0,0,1,.011-.057.064.064,0,0,1,.053-.025h1.777a.064.064,0,0,1,.063.051l.969,4.34,0,.013a.058.058,0,0,1,0,.019A.063.063,0,0,1,70.03,144.853Zm3.731-4.41-.789,4.359a.066.066,0,0,1-.063.051h-1.1a.064.064,0,0,1-.063-.051l-.789-4.357a.064.064,0,0,1,.013-.055.07.07,0,0,1,.051-.025H73.7a.06.06,0,0,1,.051.025A.064.064,0,0,1,73.76,140.443Zm3.737,0L76.26,144.8a.068.068,0,0,1-.063.049H74.684a.063.063,0,0,1-.051-.025.064.064,0,0,1-.013-.055l.973-4.357a.066.066,0,0,1,.063-.051h1.777a.071.071,0,0,1,.053.025A.076.076,0,0,1,77.5,140.448Z" transform="translate(-62.393 -135.3)" fill="currentColor"/>
                       </svg>
                   </span>
                   <span class="offcanvas__stikcy--toolbar__label">Cart</span>
-                  <span class="items__count">3</span>
+                  <span class="items__count"><?= $cart_items_count; ?></span>
               </a>
           </li>
           <li class="offcanvas__stikcy--toolbar__list">
-              <a class="offcanvas__stikcy--toolbar__btn" href="wishlist.html">
+              <a class="offcanvas__stikcy--toolbar__btn" href="<?= BASE_URL; ?>/wishlist.php">
                   <span class="offcanvas__stikcy--toolbar__icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18.541" height="15.557" viewBox="0 0 18.541 15.557">
                       <path  d="M71.775,135.51a5.153,5.153,0,0,1,1.267-1.524,4.986,4.986,0,0,1,6.584.358,4.728,4.728,0,0,1,1.174,4.914,10.458,10.458,0,0,1-2.132,3.808,22.591,22.591,0,0,1-5.4,4.558c-.445.282-.9.549-1.356.812a.306.306,0,0,1-.254.013,25.491,25.491,0,0,1-6.279-4.8,11.648,11.648,0,0,1-2.52-4.009,4.957,4.957,0,0,1,.028-3.787,4.629,4.629,0,0,1,3.744-2.863,4.782,4.782,0,0,1,5.086,2.447c.013.019.025.034.057.076Z" transform="translate(-62.498 -132.915)" fill="currentColor"/>
                       </svg>
                   </span>
                   <span class="offcanvas__stikcy--toolbar__label">Wishlist</span>
-                  <span class="items__count">3</span>
+                  <span class="items__count"><?= $wishlist_count; ?></span>
               </a>
           </li>
       </ul>
@@ -370,7 +391,7 @@
   <!-- End Offcanvas stikcy toolbar -->
 
   <!-- Start offCanvas minicart -->
-  <div class="offCanvas__minicart">
+  <!-- <div class="offCanvas__minicart">
       <div class="minicart__header ">
           <div class="minicart__header--top d-flex justify-content-between align-items-center">
               <h2 class="minicart__title h3"> Shopping Cart</h2>
@@ -446,7 +467,7 @@
           <a class="primary__btn minicart__button--link" href="cart.html">View cart</a>
           <a class="primary__btn minicart__button--link" href="checkout.html">Checkout</a>
       </div>
-  </div>
+  </div> -->
   <!-- End offCanvas minicart -->
 
   <!-- Start serch box area -->

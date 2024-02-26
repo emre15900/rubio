@@ -211,7 +211,7 @@ require ('includes/products.php');
                                                 <span class="product__items--content__subtitle"><?= $product['categories'] ;?></span>
                                                 <h3 class="product__items--content__title h4"><a href="product-details.html"><?= $product['name'] ;?></a></h3>
                                                 <div class="product__items--price">
-                                                    <span class="current__price"><?= $product['price'] ;?></span>
+                                                    <span class="current__price"><?= '$'.$product['price'] ;?></span>
                                                     <span class="price__divided"></span>
                                                     <span class="old__price"><?= '$'.rand(23, 78) ;?></span>
                                                 </div>
@@ -255,7 +255,7 @@ require ('includes/products.php');
                                                 </ul>
                                                 <ul class="product__items--action d-flex">
                                                     <li class="product__items--action__list">
-                                                        <a class="product__items--action__btn add__to--cart" href="cart.html">
+                                                        <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php">
                                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
                                                                 <g transform="translate(0 0)">
                                                                     <g>
@@ -265,17 +265,17 @@ require ('includes/products.php');
                                                                     </g>
                                                                 </g>
                                                             </svg>
-                                                            <span class="add__to--cart__text"> + Add to cart</span>
+                                                            <span class="add__to--cart__text add-to-cart-btn"> + Add to cart</span>
                                                         </a>
                                                     </li>
                                                     <li class="product__items--action__list">
-                                                        <a class="product__items--action__btn" href="wishlist.html">
+                                                        <a class="product__items--action__btn" href="<?= BASE_URL; ?>/wishlist.php?product_id=<?= $product['id']; ?>">
                                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
                                                             <span class="visually-hidden">Wishlist</span>
                                                         </a>
                                                     </li>
                                                     <li class="product__items--action__list">
-                                                        <a class="product__items--action__btn" data-open="modal1" href="javascript:void(0)">
+                                                        <a class="product__items--action__btn" data-open="modal1" href="<?= BASE_URL; ?>/product.php?id=<?= $product['id']; ?>">
                                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"  width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                                                             <span class="visually-hidden">Quick View</span>
                                                         </a>
@@ -2138,7 +2138,7 @@ require ('includes/products.php');
         <!-- End deals banner section -->
 
         <!-- Start product section -->
-        <section class="product__section section--padding pt-0">
+        <!-- <section class="product__section section--padding pt-0">
             <div class="container-fluid">
                 <div class="section__heading text-center mb-50">
                     <h2 class="section__heading--maintitle">Our Best Seller</h2>
@@ -2767,7 +2767,7 @@ require ('includes/products.php');
                     <div class="swiper__nav--btn swiper-button-prev"></div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End product section -->
 
         <!-- Start banner section -->

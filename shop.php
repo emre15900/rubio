@@ -43,7 +43,7 @@ require ('includes/products.php');
         <!-- Start shop section -->
         <section class="shop__section section--padding">
             <div class="container-fluid">
-                <div class="shop__header bg__gray--color d-flex align-items-center justify-content-between mb-30">
+                <!-- <div class="shop__header bg__gray--color d-flex align-items-center justify-content-between mb-30">
                     <button class="widget__filter--btn d-flex d-lg-none align-items-center" data-offcanvas>
                         <svg  class="widget__filter--btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28" d="M368 128h80M64 128h240M368 384h80M64 384h240M208 256h240M64 256h80"/><circle cx="336" cy="128" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/><circle cx="176" cy="256" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/><circle cx="336" cy="384" r="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/></svg>
                         <span class="widget__filter--btn__text">Filter</span>
@@ -118,7 +118,7 @@ require ('includes/products.php');
                         </div>
                     </div>
                     <p class="product__showing--count">Showing 1–9 of 21 results</p>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-xl-3 col-lg-4">
                         <div class="shop__sidebar--widget widget__area d-none d-lg-block">
@@ -563,7 +563,7 @@ require ('includes/products.php');
                                                             <span class="product__items--content__subtitle"><?= $product['categories'] ;?></span>
                                                             <h3 class="product__items--content__title h4"><a href="product-details.html"><?= $product['name'] ;?></a></h3>
                                                             <div class="product__items--price">
-                                                                <span class="current__price"><?= $product['price'] ;?></span>
+                                                                <span class="current__price"><?= '$'.$product['price'] ;?></span>
                                                                 <span class="price__divided"></span>
                                                                 <span class="old__price"><?= '$'.rand(23, 78) ;?></span>
                                                             </div>
@@ -607,7 +607,7 @@ require ('includes/products.php');
                                                             </ul>
                                                             <ul class="product__items--action d-flex">
                                                                 <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn add__to--cart" href="cart.html">
+                                                                    <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>">
                                                                         <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
                                                                             <g transform="translate(0 0)">
                                                                                 <g>
@@ -617,7 +617,7 @@ require ('includes/products.php');
                                                                                 </g>
                                                                             </g>
                                                                         </svg>
-                                                                        <span class="add__to--cart__text"> + Add to cart</span>
+                                                                        <span class="add__to--cart__text add-to-cart-btn"> + Add to cart</span>
                                                                     </a>
                                                                 </li>
                                                                 <li class="product__items--action__list">
@@ -627,7 +627,7 @@ require ('includes/products.php');
                                                                     </a>
                                                                 </li>
                                                                 <li class="product__items--action__list">
-                                                                    <a class="product__items--action__btn" data-open="modal1" href="javascript:void(0)">
+                                                                    <a class="product__items--action__btn" href="<?= BASE_URL; ?>/product.php?id=<?= $product['id']; ?>">
                                                                         <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg"  width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                                                                         <span class="visually-hidden">Quick View</span>
                                                                     </a>
@@ -642,7 +642,7 @@ require ('includes/products.php');
                                         </div>
                                     </div>
                                 </div>
-                                <div id="product_list" class="tab_pane">
+                                <!-- <div id="product_list" class="tab_pane">
                                     <div class="product__section--inner">
                                         <div class="row row-cols-1 mb--n30">
                                             <div class="col mb-30">
@@ -704,7 +704,7 @@ require ('includes/products.php');
                                                         <p class="product__list--items__content--desc d-none d-xl-block mb-15">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia voluptas dolore doloribus architecto sequi corporis deleniti officia culpa dolor esse consectetur eligendi, natus at rem ab quae amet molestiae quod voluptates, illo exercitationem numquam ipsa. Est fuga ex ipsum alias ipsa quibusdam magni harum labore voluptate, esse deserunt saepe eveniet.</p>
                                                         <ul class="product__items--action d-flex">
                                                             <li class="product__items--action__list">
-                                                                <a class="product__items--action__btn add__to--cart" href="cart.html">
+                                                                <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>">
                                                                     <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
                                                                         <g transform="translate(0 0)">
                                                                         <g>
@@ -1181,7 +1181,7 @@ require ('includes/products.php');
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="pagination__area bg__gray--color">
                                 <nav class="pagination justify-content-center">
@@ -1673,14 +1673,8 @@ Telephone: <a href="tel:+254 723 826 12 73">+254 723 826 12 73</a>
     <!-- Scroll top bar -->
     <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
-  <!-- All Script JS Plugins here  -->
-  <script src="assets/js/vendor/popper.js" defer="defer"></script>
-  <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-  <script src="assets/js/plugins/glightbox.min.js"></script>
-
-  <!-- Customscript js -->
-  <script src="assets/js/script.js"></script>
+  <!-- All Script JS Plugins here && Customscript js -->
+    <?php include ('includes/javascripts.php'); ?>
 
 </body>
 </html>

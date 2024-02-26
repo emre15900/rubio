@@ -103,7 +103,7 @@ if(!$product) {
                             <form action="#">
                                 <h2 class="product__details--info__title mb-15"><?= $product['name']; ?></h2>
                                 <div class="product__details--info__price mb-10">
-                                    <span class="current__price"><?= $product['price']; ?></span>
+                                    <span class="current__price"><?= '$'.$product['price']; ?></span>
                                     <span class="price__divided"></span>
                                     <span class="old__price"><?= '$'.rand(23, 98); ?></span>
                                 </div>
@@ -181,7 +181,7 @@ if(!$product) {
                                             </label>
                                             <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
                                         </div>
-                                        <button class="quickview__cart--btn primary__btn" type="submit">Add To Cart</button>
+                                        <a href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>" class="quickview__cart--btn primary__btn add-to-cart-btn">Add To Cart</a>
                                     </div>
                                     <div class="product__variant--list mb-15">
                                         <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
@@ -606,7 +606,7 @@ if(!$product) {
                                         <span class="product__items--content__subtitle"><?= $product['categories']; ?></span>
                                         <h3 class="product__items--content__title h4"><a href="product-details.html"><?= $product['name']; ?></a></h3>
                                         <div class="product__items--price">
-                                            <span class="current__price"><?= $product['price']; ?></span>
+                                            <span class="current__price"><?= '$'.$product['price']; ?></span>
                                             <span class="price__divided"></span>
                                             <span class="old__price"><?= '$'.rand(18, 90); ?></span>
                                         </div>
@@ -1080,14 +1080,8 @@ Telephone: <a href="tel:+254 723 826 12 73">+254 723 826 12 73</a>
     <!-- Scroll top bar -->
     <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
-  <!-- All Script JS Plugins here  -->
-  <script src="assets/js/vendor/popper.js" defer="defer"></script>
-  <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-  <script src="assets/js/plugins/glightbox.min.js"></script>
-
-  <!-- Customscript js -->
-  <script src="assets/js/script.js"></script>
+  <!-- All Script JS Plugins here && Customscript js -->
+    <?php include ('includes/javascripts.php'); ?>
 
 </body>
 </html>

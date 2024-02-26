@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['user'] = $user;
         $success_message = "Login successfull";
-        header('Location:'.BASE_URL);
+        header('Location:'.BASE_URL.'/');
         exit;
       }
     }

@@ -22,7 +22,15 @@ if (!($query->rowCount() > 0)) {
     $dbh->exec($sql);
 }
 
-$categories = ['Jacket, Women', 'Jacket, Men'];
+$categories = [
+  'Jacket, Women',
+  'Western Denim',
+  'Jacket, Men',
+  'Woodelend Jacket',
+  'Mini Dress',
+];
+
+$categories[rand(0, (count($categories) - 1))];
 
 $products = [
     [
@@ -31,8 +39,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -42,8 +50,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -53,8 +61,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -64,8 +72,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -75,8 +83,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -86,8 +94,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -97,8 +105,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -108,8 +116,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -119,8 +127,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],
@@ -130,8 +138,8 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => '$'.rand(110, 990),
-      'categories' => $categories[array_rand($categories, 2)[0]],
+      'price' => rand(110, 990),
+      'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
     ],

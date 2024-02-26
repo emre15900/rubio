@@ -2,7 +2,7 @@
 
 
 if(!defined('IS_LOCAL')) {
-  define('IS_LOCAL', true); // Change to false in prod
+  define('IS_LOCAL', false); // Change to false in prod
 }
 
 
