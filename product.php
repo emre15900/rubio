@@ -43,8 +43,8 @@ if(!$product) {
         <!-- Start product details section -->
         <section class="product__details--section section--padding">
             <div class="container">
-                <div class="row row-cols-lg-2 row-cols-md-2">
-                    <div class="col">
+                <div class="row row-cols-lg-2 row-cols-md-2 align-items-center">
+                    <div class="col col-md-6 col-12">
                         <div class="product__details--media">
                             <div class="product__media--preview  swiper">
                                 <div class="swiper-wrapper">
@@ -98,7 +98,7 @@ if(!$product) {
                             </div> -->
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col col-md-6 col-12">
                         <div class="product__details--info">
                             <form action="#">
                                 <h2 class="product__details--info__title mb-15"><?= $product['name']; ?></h2>
@@ -184,11 +184,11 @@ if(!$product) {
                                         <a href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>" class="quickview__cart--btn primary__btn add-to-cart-btn">Add To Cart</a>
                                     </div>
                                     <div class="product__variant--list mb-15">
-                                        <a class="variant__wishlist--icon mb-15" href="wishlist.html" title="Add to wishlist">
+                                        <a class="variant__wishlist--icon mb-15" href="<?= BASE_URL; ?>/wishlist.php?product_id=<?= $product['id']; ?>" title="Add to wishlist">
                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                             Add to Wishlist
                                         </a>
-                                        <button class="variant__buy--now__btn primary__btn" type="submit">Buy it now</button>
+                                        <!-- <button class="variant__buy--now__btn primary__btn" type="submit">Buy it now</button> -->
                                     </div>
                                     <!-- <div class="product__details--info__meta">
                                         <p class="product__details--info__meta--list"><strong>Barcode:</strong>  <span>565461</span> </p>
@@ -650,7 +650,7 @@ if(!$product) {
                                         </ul> -->
                                         <ul class="product__items--action d-flex">
                                             <li class="product__items--action__list">
-                                                <a class="product__items--action__btn add__to--cart" href="cart.html">
+                                                <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>">
                                                     <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
                                                         <g transform="translate(0 0)">
                                                           <g>
@@ -664,7 +664,7 @@ if(!$product) {
                                                 </a>
                                             </li>
                                             <li class="product__items--action__list">
-                                                <a class="product__items--action__btn" href="wishlist.html">
+                                                <a class="product__items--action__btn" href="<?= BASE_URL; ?>/wishlist.php?product_id=<?= $product['id']; ?>">
                                                     <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
                                                     <span class="visually-hidden">Wishlist</span>
                                                 </a>
@@ -812,7 +812,7 @@ Telephone: <a href="tel:+254 723 826 12 73">+254 723 826 12 73</a>
                             <li class="footer__widget--menu__list"><a class="footer__widget--menu__text" href="login.html">Login</a></li>
                             <li class="footer__widget--menu__list"><a class="footer__widget--menu__text" href="login.html">Register</a></li>
                             <li class="footer__widget--menu__list"><a class="footer__widget--menu__text" href="checkout.html">Checkout</a></li>
-                            <li class="footer__widget--menu__list"><a class="footer__widget--menu__text" href="wishlist.html">Wishlist</a></li>
+                            <li class="footer__widget--menu__list"><a class="footer__widget--menu__text" href="<?= BASE_URL; ?>/wishlist.php">Wishlist</a></li>
                         </ul>
                     </div>
                     <div class="footer__widget">
@@ -1025,7 +1025,7 @@ Telephone: <a href="tel:+254 723 826 12 73">+254 723 826 12 73</a>
                                         <button class="primary__btn quickview__cart--btn" type="submit">Add To Cart</button>
                                     </div>
                                     <div class="quickview__variant--list variant__wishlist mb-15">
-                                        <a class="variant__wishlist--icon" href="wishlist.html" title="Add to wishlist">
+                                        <a class="variant__wishlist--icon" href="<?= BASE_URL; ?>/wishlist.php?product_id=<?= $product['id']; ?>" title="Add to wishlist">
                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                             Add to Wishlist
                                         </a>

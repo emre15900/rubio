@@ -863,7 +863,7 @@ const newsletterPopup = function () {
     dontShowPopup = document.querySelector("#newsletter__dont--show"),
     popuDontShowMode = localStorage.getItem("newsletter__show");
 
-  if (newsletterWrapper && popuDontShowMode == null) {
+  if (newsletterWrapper && dontShowPopup && popuDontShowMode == null) {
     window.addEventListener("load", (event) => {
       setTimeout(function () {
         document.body.classList.add("overlay__active");
@@ -881,13 +881,15 @@ const newsletterPopup = function () {
           newsletterWrapper.classList.remove("newsletter__show");
         });
 
-        dontShowPopup.addEventListener("click", function () {
-          if (dontShowPopup.checked) {
-            localStorage.setItem("newsletter__show", true);
-          } else {
-            localStorage.removeItem("newsletter__show");
-          }
-        });
+        if (dontShowPopup) {
+          dontShowPopup.addEventListener("click", function () {
+						if (dontShowPopup.checked) {
+							localStorage.setItem("newsletter__show", true);
+						} else {
+							localStorage.removeItem("newsletter__show");
+						}
+					});
+				}
       }, 3000);
     });
   }

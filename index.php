@@ -255,7 +255,7 @@ require ('includes/products.php');
                                                 </ul>
                                                 <ul class="product__items--action d-flex">
                                                     <li class="product__items--action__list">
-                                                        <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php">
+                                                        <a class="product__items--action__btn add__to--cart" href="<?= BASE_URL; ?>/cart.php?product_id=<?= $product['id']; ?>">
                                                             <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 14.706 13.534">
                                                                 <g transform="translate(0 0)">
                                                                     <g>
@@ -3172,7 +3172,7 @@ require ('includes/products.php');
             <button class="newsletter__popup--close__btn" aria-label="search close button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 512 512"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"></path></svg>
             </button>
-            <div class="box newsletter__popup--box d-flex align-items-center">
+            <!-- <div class="box newsletter__popup--box d-flex align-items-center">
                 <div class="newsletter__popup--thumbnail">
                     <img class="newsletter__popup--thumbnail__img display-block" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/newsletter-popup-thumb2.png" alt="newsletter-popup-thumb">
                 </div>
@@ -3192,7 +3192,7 @@ require ('includes/products.php');
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- End News letter popup -->

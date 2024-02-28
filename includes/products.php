@@ -22,14 +22,7 @@ if (!($query->rowCount() > 0)) {
     $dbh->exec($sql);
 }
 
-$categories = [
-  'Jacket, Women',
-  'Western Denim',
-  'Jacket, Men',
-  'Woodelend Jacket',
-  'Mini Dress',
-];
-
+include ('categories.php');
 $categories[rand(0, (count($categories) - 1))];
 
 $products = [
@@ -165,16 +158,31 @@ foreach($products as $product) {
       'status' => 'active'
     ]);
   }
-
 }
 
 $sql = "SELECT * FROM products";
-if(!empty($limit)) {
+$is_search = isset($_GET['category']) && isset($_GET['query']);
+
+if($is_search) {
+  $sql = $sql." WHERE categories LIKE :categories OR name LIKE :query OR description LIKE :query";
+}
+
+if(!empty($limit) && is_int($limit)) {
   $sql = $sql." LIMIT $limit";
 }
 
 $query = $dbh->prepare($sql);
-$query->execute();
+if($is_search) {
+  $search = $_GET['query'];
+  $category = $_GET['category'];
+  $query->execute([
+    'query' => '%'.$search.'%',
+    'categories' => $category
+  ]);
+}else {
+  $query->execute();
+}
+
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>

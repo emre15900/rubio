@@ -124,185 +124,22 @@ require ('includes/products.php');
                         <div class="shop__sidebar--widget widget__area d-none d-lg-block">
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title h3">Categories</h2>
-                                <ul class="widget__categories--menu">
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product1.png" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Denim Jacket</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
+                                <?php include ('includes/categories.php'); ?>
+                                <?php if(empty($categories)): ?>
+                                    <div value="">No Categories</div>
+                                <?php else: ?>
+                                    <ul class="widget__categories--menu">
+                                        <?php foreach($categories as $category): ?>
                                             <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
+                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="<?= BASE_URL; ?>/shop.php?category=<?= $category; ?>&query=<?= $category; ?>">
+                                                    <span class="widget__categories--sub__menu--text"><?= $category; ?></span>
                                                 </a>
                                             </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Oversize Cotton</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394" >
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Dairy & chesse</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Shoulder Bag</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Denim Jacket</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product3.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product5.png" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
                             </div>
-                            <div class="single__widget widget__bg">
+                            <!-- <div class="single__widget widget__bg">
                                 <h2 class="widget__title h3">Dietary Needs</h2>
                                 <ul class="widget__form--check">
                                     <li class="widget__form--check__list">
@@ -528,16 +365,16 @@ require ('includes/products.php');
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title h3">Brands</h2>
                                 <ul class="widget__tagcloud">
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Jacket</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Women</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Oversize</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Cotton </a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Shoulder </a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Winter</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Accessories</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Dress </a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Jacket</a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Women</a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Oversize</a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Cotton </a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Shoulder </a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Winter</a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Accessories</a></li>
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="<?= BASE_URL; ?>/shop.php">Dress </a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-xl-9 col-lg-8">
@@ -545,8 +382,10 @@ require ('includes/products.php');
                             <div class="tab_content">
                                 <div id="product_grid" class="tab_pane active show">
                                     <div class="product__section--inner product__grid--inner">
-                                        <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-2 mb--n30">
-                                            <?php if(!empty($products) && count($products) > 0): ?>
+                                        <?php if(empty($products) && count($products) <= 0): ?>
+                                            <div class="alert alert-danger">No products found.</div>
+                                        <?php else: ?>
+                                            <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-2 mb--n30">
                                                 <?php foreach($products as $product): ?>
                                                     <div class="col mb-30">
                                                     <div class="product__items ">
@@ -638,8 +477,8 @@ require ('includes/products.php');
                                                     </div>
                                                     </div>
                                                 <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <!-- <div id="product_list" class="tab_pane">
@@ -1183,28 +1022,28 @@ require ('includes/products.php');
                                     </div>
                                 </div> -->
                             </div>
-                            <div class="pagination__area bg__gray--color">
+                            <!-- <div class="pagination__area bg__gray--color">
                                 <nav class="pagination justify-content-center">
                                     <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
                                         <li class="pagination__list">
-                                            <a href="shop.html" class="pagination__item--arrow  link ">
+                                            <a href="<?= BASE_URL; ?>/shop.php" class="pagination__item--arrow  link ">
                                                 <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
                                                 <span class="visually-hidden">pagination arrow</span>
                                             </a>
                                         <li>
                                         <li class="pagination__list"><span class="pagination__item pagination__item--current">1</span></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">2</a></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">3</a></li>
-                                        <li class="pagination__list"><a href="shop.html" class="pagination__item link">4</a></li>
+                                        <li class="pagination__list"><a href="<?= BASE_URL; ?>/shop.php" class="pagination__item link">2</a></li>
+                                        <li class="pagination__list"><a href="<?= BASE_URL; ?>/shop.php" class="pagination__item link">3</a></li>
+                                        <li class="pagination__list"><a href="<?= BASE_URL; ?>/shop.php" class="pagination__item link">4</a></li>
                                         <li class="pagination__list">
-                                            <a href="shop.html" class="pagination__item--arrow  link ">
+                                            <a href="<?= BASE_URL; ?>/shop.php" class="pagination__item--arrow  link ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
                                                 <span class="visually-hidden">pagination arrow</span>
                                             </a>
                                         <li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
