@@ -3,9 +3,6 @@
 ob_start();
 include ('config/database.php');
 
-$query = $dbh->prepare("DROP TABLE IF EXISTS products");
-$query->execute();
-
 $query = $dbh->prepare("SHOW TABLES LIKE :products");
 $query->execute([':products' => 'products']);
 
