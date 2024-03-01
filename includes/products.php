@@ -3,6 +3,9 @@
 ob_start();
 include ('config/database.php');
 
+$query = $dbh->prepare("DROP TABLE IF EXISTS products");
+$query->execute();
+
 $query = $dbh->prepare("SHOW TABLES LIKE :products");
 $query->execute([':products' => 'products']);
 
@@ -17,6 +20,8 @@ if (!($query->rowCount() > 0)) {
         `categories` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
         `quantity` int NOT NULL,
         `status` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+        `currency` varchar(255) CHARACTER SET utf8mb4 DEFAULT 'NGN',
+        `percentage_off` varchar(255) CHARACTER SET utf8mb4 DEFAULT '25',
         PRIMARY KEY (`id`)
     )";
     $dbh->exec($sql);
@@ -32,7 +37,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -43,7 +48,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -54,7 +59,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -65,7 +70,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -76,7 +81,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -87,7 +92,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -98,7 +103,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -109,7 +114,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -120,7 +125,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -131,7 +136,7 @@ $products = [
       'description' => ucfirst(str_shuffle('Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit cum harum dolor sciunt.')),
       'tag' => 'Sale',
 
-      'price' => rand(110, 990),
+      'price' => rand(10000, 24000),
       'categories' => $categories[rand(0, count($categories) - 1)],
       'quantity' => rand(100, 900),
       'status' => 'active',
@@ -145,7 +150,7 @@ foreach($products as $product) {
   $row = $query->fetch(PDO::FETCH_ASSOC);
 
   if(!$row) {
-    $query = $dbh->prepare("INSERT INTO products (name, description, price, categories, tag, img, quantity, status) VALUES (:name, :description, :price, :categories, :tag, :img, :quantity, :status)");
+    $query = $dbh->prepare("INSERT INTO products (name, description, price, categories, tag, img, quantity, status, percentage_off, currency) VALUES (:name, :description, :price, :categories, :tag, :img, :quantity, :status, :percentage_off, :currency)");
 
     $query->execute([
       'name' => $name,
@@ -155,7 +160,9 @@ foreach($products as $product) {
       'quantity' => $product['quantity'],
       'categories' => $product['categories'],
       'tag' => $product['tag'],
-      'status' => 'active'
+      'status' => 'active',
+      'percentage_off' => rand(10, 25),
+      'currency' => 'NGN'
     ]);
   }
 }

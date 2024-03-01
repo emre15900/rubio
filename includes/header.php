@@ -1,12 +1,23 @@
 <?php
 
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle): bool
+    {
+        return '' === $needle || false !== strpos($haystack, $needle);
+    }
+}
+
+$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']
+              === 'on' ? "https" : "http") . "://" .
+              $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+
 if (isset($_COOKIE['cart_items'])) {
     $cart_items_json = $_COOKIE['cart_items'];
 
     $cart_items = json_decode($cart_items_json, true);
     $cart_items_count = count($cart_items);
 }else {
-    $cart_items_count = isset($_GET['product_id']) ? 1 : 0;
+    $cart_items_count = isset($_GET['product_id']) && str_contains($link, 'cart.php') ? 1 : 0;
 }
 
 if (isset($_COOKIE['wishlist'])) {
@@ -15,7 +26,7 @@ if (isset($_COOKIE['wishlist'])) {
     $wishlist = json_decode($wishlist_json, true);
     $wishlist_count = count($wishlist);
 }else {
-    $wishlist_count = isset($_GET['product_id']) ? 1 : 0;
+    $wishlist_count = isset($_GET['product_id']) && str_contains($link, 'wishlist.php') ? 1 : 0;
 }
 ?>
 
@@ -27,7 +38,7 @@ if (isset($_COOKIE['wishlist'])) {
           <div class="header__topbar--inner d-flex align-items-center justify-content-between">
               <div class="header__shipping">
                   <ul class="header__shipping--wrapper d-flex">
-                      <li class="header__shipping--text text-white">+254 723 826 12 73</li>
+                      <li class="header__shipping--text text-white">+2347238261273</li>
                       <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/bus.png" alt="bus-icon"> Track Your Order</li>
                       <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/email.png" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:info@rubio.shopping">info@rubio.shopping</a></li>
                   </ul>
@@ -52,14 +63,19 @@ if (isset($_COOKIE['wishlist'])) {
                       </li>
                       <li class="language__currency--list">
                           <a class="account__currency--link text-white" href="#">
-                              <img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/usd-icon.png" alt="currency">
-                              <span>$ US Dollar</span>
+                              <img
+                                src="https://flagcdn.com/w20/ng.png"
+                                srcset="https://flagcdn.com/w40/ng.png 2x"
+                                width="20"
+                                alt="Nigeria">
+                              <span>₦ Nigerian Naira</span>
                               <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                   <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                               </svg>
                           </a>
                           <div class="dropdown__currency">
                               <ul>
+                                  <li class="currency__items"><a class="currency__text" href="#">NGN</a></li>
                                   <li class="currency__items"><a class="currency__text" href="#">CAD</a></li>
                                   <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
                                   <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
@@ -111,12 +127,13 @@ if (isset($_COOKIE['wishlist'])) {
               </div>
               <div class="header__account header__sticky--none">
                   <ul class="d-flex">
-                      <li class="header__account--items">
-                          <a class="header__account--btn" href="my-account.html">
+                      <!-- <li class="header__account--items">
+
+                          <a class="header__account--btn" href="my-account.php">
                               <svg xmlns="http://www.w3.org/2000/svg"  width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                               <span class="header__account--btn__text">My Account</span>
                           </a>
-                      </li>
+                      </li> -->
                       <li class="header__account--items d-none d-lg-block">
                           <a class="header__account--btn" href="<?= BASE_URL; ?>/wishlist.php">
                               <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
@@ -157,10 +174,10 @@ if (isset($_COOKIE['wishlist'])) {
 
                           </li>
                           <li class="header__menu--items style2">
-                              <a class="header__menu--link" href="about.html">About Us </a>
+                              <a class="header__menu--link" href="about.php">About Us </a>
                           </li>
                             <li class="header__menu--items style2">
-                              <a class="header__menu--link" href="blog.html">Blog
+                              <a class="header__menu--link" href="blog.php">Blog
 
                               </a>
 
@@ -190,7 +207,7 @@ if (isset($_COOKIE['wishlist'])) {
                           </a>
                       </li>
                       <li class="header__account--items header__account2--items">
-                          <a class="header__account--btn" href="my-account.html">
+                          <a class="header__account--btn" href="my-account.php">
                               <svg xmlns="http://www.w3.org/2000/svg"  width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                               <span class="visually-hidden">My Account</span>
                           </a>
@@ -235,10 +252,10 @@ if (isset($_COOKIE['wishlist'])) {
                               </a>
                           </li>
                           <li class="header__menu--items">
-                              <a class="header__menu--link" href="about.html">About Us </a>
+                              <a class="header__menu--link" href="about.php">About Us </a>
                           </li>
                           <li class="header__menu--items">
-                              <a class="header__menu--link" href="blog.html">Blog
+                              <a class="header__menu--link" href="blog.php">Blog
 
                               </a>
 
@@ -274,21 +291,21 @@ if (isset($_COOKIE['wishlist'])) {
                       <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/shop.php">Shop</a>
                   </li>
                   <li class="offcanvas__menu_li">
-                      <a class="offcanvas__menu_item" href="blog.html">Blog</a>
+                      <a class="offcanvas__menu_item" href="blog.php">Blog</a>
                   </li>
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="#">Pages</a>
                       <ul class="offcanvas__sub_menu">
-                          <li class="offcanvas__sub_menu_li"><a href="about.html" class="offcanvas__sub_menu_item">About Us</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="about.php" class="offcanvas__sub_menu_item">About Us</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/contact.php" class="offcanvas__sub_menu_item">Contact Us</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/cart.php" class="offcanvas__sub_menu_item">Cart Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="portfolio.html" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="portfolio.php" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/wishlist.php" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
                           <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/login.php" class="offcanvas__sub_menu_item">Login Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="404.html" class="offcanvas__sub_menu_item">Error Page</a></li>
+                          <li class="offcanvas__sub_menu_li"><a href="404.php" class="offcanvas__sub_menu_item">Error Page</a></li>
                       </ul>
                   </li>
-                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.html">About</a></li>
+                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.php">About</a></li>
                   <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/contact.php">Contact</a></li>
               </ul>
               <div class="offcanvas__account--items">
@@ -408,10 +425,10 @@ if (isset($_COOKIE['wishlist'])) {
       <div class="minicart__product">
           <div class="minicart__product--items d-flex">
               <div class="minicart__thumb">
-                  <a href="product-details.html"><img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/product1.png" alt="prduct-img"></a>
+                  <a href="product-details.php"><img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/product1.png" alt="prduct-img"></a>
               </div>
               <div class="minicart__text">
-                  <h3 class="minicart__subtitle h4"><a href="product-details.html">Oversize Cotton Dress</a></h3>
+                  <h3 class="minicart__subtitle h4"><a href="product-details.php">Oversize Cotton Dress</a></h3>
                   <span class="color__variant"><b>Color:</b> Beige</span>
                   <div class="minicart__price">
                       <span class="current__price">$125.00</span>
@@ -431,10 +448,10 @@ if (isset($_COOKIE['wishlist'])) {
           </div>
           <div class="minicart__product--items d-flex">
               <div class="minicart__thumb">
-                  <a href="product-details.html"><img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/product2.png" alt="prduct-img"></a>
+                  <a href="product-details.php"><img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/product2.png" alt="prduct-img"></a>
               </div>
               <div class="minicart__text">
-                  <h3 class="minicart__subtitle h4"><a href="product-details.html">Boxy Denim Jacket</a></h3>
+                  <h3 class="minicart__subtitle h4"><a href="product-details.php">Boxy Denim Jacket</a></h3>
                   <span class="color__variant"><b>Color:</b> Green</span>
                   <div class="minicart__price">
                       <span class="current__price">$115.00</span>
@@ -465,11 +482,11 @@ if (isset($_COOKIE['wishlist'])) {
       </div>
       <div class="minicart__conditions text-center">
           <input class="minicart__conditions--input" id="accept" type="checkbox">
-          <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy and Policy</a></label>
+          <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.php">Privacy and Policy</a></label>
       </div>
       <div class="minicart__button d-flex justify-content-center">
-          <a class="primary__btn minicart__button--link" href="cart.html">View cart</a>
-          <a class="primary__btn minicart__button--link" href="checkout.html">Checkout</a>
+          <a class="primary__btn minicart__button--link" href="cart.php">View cart</a>
+          <a class="primary__btn minicart__button--link" href="checkout.php">Checkout</a>
       </div>
   </div> -->
   <!-- End offCanvas minicart -->

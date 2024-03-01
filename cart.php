@@ -122,7 +122,7 @@ $total = [];
                                                             </div>
                                                         </td>
                                                         <td class="cart__table--body__list">
-                                                            <span class="cart__price"><?= '$'.$item['price']; ?></span>
+                                                            <span class="cart__price"><?= 'NGN'.$item['price']; ?></span>
                                                         </td>
                                                         <td class="cart__table--body__list">
                                                             <div class="quantity__box">
@@ -134,7 +134,7 @@ $total = [];
                                                             </div>
                                                         </td>
                                                         <td class="cart__table--body__list">
-                                                            <span class="cart__price end"><?= '$'.number_format($item['price']); ?></span>
+                                                            <span class="cart__price end"><?= 'NGN'.number_format($item['price']); ?></span>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>
@@ -158,7 +158,7 @@ $total = [];
                                                 <tbody>
                                                     <tr class="cart__summary--total__list">
                                                         <td class="cart__summary--total__title text-left">GRAND TOTAL</td>
-                                                        <td class="cart__summary--amount text-right">$<?= array_sum($total); ?></td>
+                                                        <td class="cart__summary--amount text-right">NGN<?= array_sum($total); ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

@@ -75,40 +75,6 @@ $total = [];
                                                         <span class="cart__price">£65.00</span>
                                                     </td>
                                                 </tr>
-                                                <tr class="summary__table--items">
-                                                    <td class=" summary__table--list">
-                                                        <div class="cart__product d-flex align-items-center">
-                                                            <div class="product__thumbnail border-radius-5">
-                                                                <a href="product-details.html"><img class="border-radius-5" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product2.png" alt="cart-product"></a>
-                                                                <span class="product__thumbnail--quantity">1</span>
-                                                            </div>
-                                                            <div class="product__description">
-                                                                <h3 class="product__description--name h4"><a href="product-details.html">Vegetable-healthy</a></h3>
-                                                                <span class="product__description--variant">COLOR: Green</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class=" summary__table--list">
-                                                        <span class="cart__price">£82.00</span>
-                                                    </td>
-                                                </tr>
-                                                <tr class=" summary__table--items">
-                                                    <td class=" summary__table--list">
-                                                        <div class="cart__product d-flex align-items-center">
-                                                            <div class="product__thumbnail border-radius-5">
-                                                                <a href="product-details.html"><img class="border-radius-5" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/product/small-product4.png" alt="cart-product"></a>
-                                                                <span class="product__thumbnail--quantity">1</span>
-                                                            </div>
-                                                            <div class="product__description">
-                                                                <h3 class="product__description--name h4"><a href="product-details.html">Raw-onions-surface</a></h3>
-                                                                <span class="product__description--variant">COLOR: White</span>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class=" summary__table--list">
-                                                        <span class="cart__price">£78.00</span>
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -125,18 +91,18 @@ $total = [];
                                             <tbody class="checkout__total--body">
                                                 <tr class="checkout__total--items">
                                                     <td class="checkout__total--title text-left">Subtotal </td>
-                                                    <td class="checkout__total--amount text-right">$<?= array_sum($total); ?></td>
+                                                    <td class="checkout__total--amount text-right">NGN<?= array_sum($total); ?></td>
                                                 </tr>
                                                 <?php $shipping = rand(7, 13); ?>
                                                 <tr class="checkout__total--items">
                                                     <td class="checkout__total--title text-left">Shipping</td>
-                                                    <td class="checkout__total--calculated__text text-right">$<?= $shipping; ?></td>
+                                                    <td class="checkout__total--calculated__text text-right">NGN<?= $shipping; ?></td>
                                                 </tr>
                                             </tbody>
                                             <tfoot class="checkout__total--footer">
                                                 <tr class="checkout__total--footer__items">
                                                     <td class="checkout__total--footer__title checkout__total--footer__list text-left">Total </td>
-                                                    <td class="checkout__total--footer__amount checkout__total--footer__list text-right">$<?= array_sum($total) + $shipping; ?></td>
+                                                    <td class="checkout__total--footer__amount checkout__total--footer__list text-right">NGN<?= array_sum($total) + $shipping; ?></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -296,7 +262,7 @@ $total = [];
                                                 </div>
                                             </td>
                                             <td class="cart__table--body__list">
-                                                <span class="cart__price">$<?= $item['price']; ?></span>
+                                                <span class="cart__price">NGN<?= $item['price']; ?></span>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -316,7 +282,7 @@ $total = [];
                                 <tbody class="checkout__total--body">
                                     <tr class="checkout__total--items">
                                         <td class="checkout__total--title text-left">Subtotal </td>
-                                        <td class="checkout__total--amount text-right">$<?= array_sum($total); ?></td>
+                                        <td class="checkout__total--amount text-right">NGN<?= array_sum($total); ?></td>
                                     </tr>
                                     <tr class="checkout__total--items">
                                         <td class="checkout__total--title text-left">Shipping</td>
@@ -326,7 +292,7 @@ $total = [];
                                 <tfoot class="checkout__total--footer">
                                     <tr class="checkout__total--footer__items">
                                         <td class="checkout__total--footer__title checkout__total--footer__list text-left">Total </td>
-                                        <td class="checkout__total--footer__amount checkout__total--footer__list text-right">$<?= array_sum($total); ?></td>
+                                        <td class="checkout__total--footer__amount checkout__total--footer__list text-right">NGN<?= array_sum($total); ?></td>
                                     </tr>
                                 </tfoot>
                             </table>
