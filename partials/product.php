@@ -1,11 +1,11 @@
 
 <?php
 
-
-
 $currency = $product['currency'] ?? 'NGN';
 $price = $product['price'];
 $percentage_off = floatval($product['percentage_off'] ?? '25');
+
+
 ?>
 
 <div class="product__items">
@@ -15,16 +15,22 @@ $percentage_off = floatval($product['percentage_off'] ?? '25');
           <img class="product__items--img product__secondary--img" src="<?= $product['img'] ;?>" alt="product-img">
       </a>
       <div class="product__badge">
-          <span class="product__badge--items sale"><?= $product['tag'] ;?></span>
+          <span class="product__badge--items sale">
+            <small>
+              <?= $percentage_off; ?>% off
+            </small>
+          </span>
       </div>
   </div>
   <div class="product__items--content">
-      <span class="product__items--content__subtitle"><?= $product['categories'] ;?></span>
+      <span class="product__items--content__subtitle">
+        <?= $product['categories']; ?>
+      </span>
       <h3 class="product__items--content__title h4"><a href="<?= BASE_URL; ?>/product.php?id=<?= $product['id']; ?>"><?= $product['name'] ;?></a></h3>
       <div class="product__items--price">
           <span class="current__price"><?= $currency.number_format($price) ;?></span>
           <span class="price__divided"></span>
-          <span class="old__price"><?= $currency.(($percentage_off/100) * floatval($price)); ?></span>
+          <span class="old__price"><?= $currency.number_format($price + ceil(($percentage_off/100) * floatval($price))); ?></span>
       </div>
       <ul class="rating product__rating d-flex">
           <li class="rating__list">

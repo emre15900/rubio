@@ -114,15 +114,15 @@ $total = [];
                                                                 <div class="cart__thumbnail">
                                                                     <a href="<?= BASE_URL; ?>/product.php?id=<?= $item['id']; ?>"><img class="border-radius-5" src="<?= $item['img']; ?>" alt="cart-product"></a>
                                                                 </div>
-                                                                <div class="cart__content">
+                                                                <!-- <div class="cart__content">
                                                                     <h4 class="cart__content--title"><a href="product-details.html"><?= $item['name']; ?></a></h4>
                                                                     <span class="cart__content--variant">COLOR: Blue</span>
                                                                     <span class="cart__content--variant">WEIGHT: <?= rand(2, 23); ?> Kg</span>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                         </td>
                                                         <td class="cart__table--body__list">
-                                                            <span class="cart__price"><?= 'NGN'.$item['price']; ?></span>
+                                                            <span class="cart__price"><?= 'NGN'.number_format($item['price']); ?></span>
                                                         </td>
                                                         <td class="cart__table--body__list">
                                                             <div class="quantity__box">
@@ -158,7 +158,7 @@ $total = [];
                                                 <tbody>
                                                     <tr class="cart__summary--total__list">
                                                         <td class="cart__summary--total__title text-left">GRAND TOTAL</td>
-                                                        <td class="cart__summary--amount text-right">NGN<?= array_sum($total); ?></td>
+                                                        <td class="cart__summary--amount text-right">NGN<?= number_format(array_sum($total)); ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>

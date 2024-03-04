@@ -14,9 +14,9 @@
 Register Number : 1927300<br>
 Address : UNIT 2,VIEWPOINT PLAZA, AJAH., IKEJA, IKEJA, LAGOS STATE , NIGERIA
 <br>
-Email: <a href="<?= BASE_URL; ?>/mailto:info@rubio.shopping">info@rubio.shopping</a>  | <a href="<?= BASE_URL; ?>/mailto:support@rubio.shopping">support@rubio.shopping</a>
+Email: <a href="mailto:info@rubio.shopping">info@rubio.shopping</a>  | <a href="mailto:support@rubio.shopping">support@rubio.shopping</a>
 <br>
-Telephone: <a href="<?= BASE_URL; ?>/tel:+254 723 826 12 73">+2347238261273</a>
+Telephone: <a href="tel:<?= CONTACT_PHONE; ?>"><?= CONTACT_PHONE; ?></a>
 </p>
                         <div class="footer__social">
                             <h4 class="social__title text-ofwhite mb-15">Follow Us</h4>
@@ -149,7 +149,7 @@ Telephone: <a href="<?= BASE_URL; ?>/tel:+254 723 826 12 73">+2347238261273</a>
                 </div>
             </div>
             <div class="footer__bottom d-flex justify-content-between align-items-center">
-                <p class="copyright__content text-ofwhite m-0">Copyright © 2022 <a class="copyright__content--link" href="<?= BASE_URL; ?>/index.php">Rubio</a> . All Rights Reserved.Design By Rubio</p>
+                <p class="copyright__content text-ofwhite m-0">Copyright © 2024 <a class="copyright__content--link" href="<?= BASE_URL; ?>/index.php">Rubio</a> . All Rights Reserved.Design By Rubio</p>
                 <div class="footer__payment text-right">
                     <img class="display-block" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/other/payment-visa-card.png" alt="visa-card">
                 </div>

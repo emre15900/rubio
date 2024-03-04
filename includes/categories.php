@@ -2,10 +2,7 @@
 
 
 $categories = [
-  'Jacket, Women',
-  'Western Denim',
-  'Jacket, Men',
-  'Woodelend Jacket',
+  'Dress',
   'Mini Dress',
 ];
 

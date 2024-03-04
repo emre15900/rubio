@@ -9,3 +9,7 @@ $base_url = IS_LOCAL ? '/rubio' : '';
 if(!defined('BASE_URL')) {
   define('BASE_URL', $base_url);
 }
+
+if(!defined('CONTACT_PHONE')) {
+  define('CONTACT_PHONE', '+2347238261273');
+}

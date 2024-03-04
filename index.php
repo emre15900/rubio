@@ -26,17 +26,17 @@ require ('includes/products.php');
                 <div class="hero__slider--wrapper swiper-wrapper">
                     <div class="swiper-slide ">
                         <div class="hero__slider--items home1__slider--bg">
-                            <div class="container-fluid">
+                            <!-- <div class="container-fluid">
                                 <div class="hero__slider--items__inner">
                                     <div class="row row-cols-1">
                                         <div class="col">
                                             <div class="slider__content">
                                                 <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/text-shape-icon.png" alt="text-shape-icon"> New Collection</p>
                                                 <h2 class="slider__content--maintitle h1">The Great Fashion <br>
-                                                    Collection 2022</h2>
+                                                    Collection 2024</h2>
                                                 <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
                                                     Caught in the Moment!</p>
-                                                <a class="slider__btn primary__btn" href="shop.html">Show Collection
+                                                <a class="slider__btn primary__btn" href="shop.php">Show Collection
                                                     <svg class="primary__btn--arrow__icon" xmlns="http://www.w3.org/2000/svg" width="20.2" height="12.2" viewBox="0 0 6.2 6.2">
                                                     <path d="M7.1,4l-.546.546L8.716,6.713H4v.775H8.716L6.554,9.654,7.1,10.2,9.233,8.067,10.2,7.1Z" transform="translate(-4 -4)" fill="currentColor"></path>
                                                     </svg>
@@ -45,22 +45,22 @@ require ('includes/products.php');
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="swiper-slide ">
                         <div class="hero__slider--items home1__slider--bg two">
-                            <div class="container-fluid">
+                            <!-- <div class="container-fluid">
                                 <div class="row">
                                     <div class="col">
                                         <div class="hero__slider--items__inner">
                                             <div class="slider__content">
                                                 <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/text-shape-icon.png" alt="text-shape-icon"> New Collection</p>
                                                 <h2 class="slider__content--maintitle h1">The Great Fashion <br>
-                                                    Collection 2022</h2>
+                                                    Collection 2024</h2>
                                                 <p class="slider__content--desc desc2 d-sm-2-none mb-40 ">Up To 40% Off Final Sale Items. <br>
                                                     Caught in the Moment!</p>
-                                                <a class="primary__btn slider__btn" href="shop.html">Show Collection
+                                                <a class="primary__btn slider__btn" href="shop.php">Show Collection
                                                     <svg class="slider__btn--arrow__icon" xmlns="http://www.w3.org/2000/svg" width="20.2" height="12.2" viewBox="0 0 6.2 6.2">
                                                     <path d="M7.1,4l-.546.546L8.716,6.713H4v.775H8.716L6.554,9.654,7.1,10.2,9.233,8.067,10.2,7.1Z" transform="translate(-4 -4)" fill="currentColor"></path>
                                                     </svg>
@@ -69,22 +69,22 @@ require ('includes/products.php');
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="swiper-slide ">
                         <div class="hero__slider--items home1__slider--bg three">
-                            <div class="container-fluid">
+                            <!-- <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-6 offset-lg-6">
                                         <div class="hero__slider--items__inner">
                                             <div class="slider__content text-center">
                                                 <p class="slider__content--desc desc1 mb-15"><img class="slider__text--shape__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/text-shape-icon.png" alt="text-shape-icon"> New Collection</p>
                                                 <h2 class="slider__content--maintitle h1">The Great Fashion <br>
-                                                    Collection 2022</h2>
+                                                    Collection 2024</h2>
                                                 <p class="slider__content--desc desc2 d-sm-2-none mb-40">Up To 40% Off Final Sale Items. <br>
                                                     Caught in the Moment!</p>
-                                                <a class="primary__btn slider__btn" href="shop.html">Show Collection
+                                                <a class="primary__btn slider__btn" href="shop.php">Show Collection
                                                     <svg class="slider__btn--arrow__icon" xmlns="http://www.w3.org/2000/svg" width="20.2" height="12.2" viewBox="0 0 6.2 6.2">
                                                     <path d="M7.1,4l-.546.546L8.716,6.713H4v.775H8.716L6.554,9.654,7.1,10.2,9.233,8.067,10.2,7.1Z" transform="translate(-4 -4)" fill="currentColor"></path>
                                                     </svg>
@@ -94,7 +94,7 @@ require ('includes/products.php');
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ require ('includes/products.php');
                 <div class="row mb--n28">
                     <div class="col-lg-5 col-md-order mb-28">
                         <div class="banner__items">
-                            <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner1.png" alt="banner-img">
+                            <a class="banner__items--thumbnail position__relative" href="shop.php"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner1.png" alt="banner-img">
                                 <div class="banner__items--content">
                                     <span class="banner__items--content__subtitle">17% Discount</span>
                                     <h2 class="banner__items--content__title h3">Spring Collection <br>
@@ -128,7 +128,7 @@ require ('includes/products.php');
                         <div class="row row-cols-lg-2 row-cols-sm-2 row-cols-1">
                             <div class="col mb-28">
                                 <div class="banner__items">
-                                    <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner2.png" alt="banner-img">
+                                    <a class="banner__items--thumbnail position__relative" href="shop.php"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner2.png" alt="banner-img">
                                         <div class="banner__items--content">
                                             <span class="banner__items--content__subtitle text__secondary">Shop Women</span>
                                             <h2 class="banner__items--content__title h3">Up to 70% Off & <br>
@@ -144,7 +144,7 @@ require ('includes/products.php');
                             </div>
                             <div class="col mb-28">
                                 <div class="banner__items">
-                                    <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner3.png" alt="banner-img">
+                                    <a class="banner__items--thumbnail position__relative" href="shop.php"><img class="banner__items--thumbnail__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner3.png" alt="banner-img">
                                         <div class="banner__items--content">
                                             <span class="banner__items--content__subtitle">Shop Women</span>
                                             <h2 class="banner__items--content__title h3">Free Shipping Over <br>
@@ -160,7 +160,7 @@ require ('includes/products.php');
                             </div>
                         </div>
                         <div class="banner__items">
-                            <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner4.png" alt="banner-img">
+                            <a class="banner__items--thumbnail position__relative" href="shop.php"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner4.png" alt="banner-img">
                                 <div class="banner__items--content">
                                     <span class="banner__items--content__subtitle">25% Discount</span>
                                     <h2 class="banner__items--content__title h3">Leather Saddle <br>
@@ -210,38 +210,12 @@ require ('includes/products.php');
                                 <span class="deals__banner--content__subtitle text__secondary">Hurry up and Get 25% Discount</span>
                                 <h2 class="deals__banner--content__maintitle">Deals Of The Day</h2>
                                 <p class="deals__banner--content__desc">Benefit from special privileges defined for you with Rubio <br> Take advantage of the campaign now </p>
-                                <div class="deals__banner--countdown d-flex" data-countdown="Sep 30, 2022 00:00:00"></div>
-                                <a class="primary__btn" href="shop.html">Show Collection
+                                <div class="deals__banner--countdown d-flex" data-countdown="March 20, 2024 00:00:00"></div>
+                                <a class="primary__btn" href="shop.php">Show Collection
                                     <svg class="primary__btn--arrow__icon" xmlns="http://www.w3.org/2000/svg" width="20.2" height="12.2" viewBox="0 0 6.2 6.2">
                                     <path d="M7.1,4l-.546.546L8.716,6.713H4v.775H8.716L6.554,9.654,7.1,10.2,9.233,8.067,10.2,7.1Z" transform="translate(-4 -4)" fill="currentColor"></path>
                                     </svg>
                                 </a>
-                                <br>
-                                <div class="banner__bideo--play">
-                                    <a class="banner__bideo--play__icon glightbox" href="https://vimeo.com/115041822" data-gallery="video">
-                                        <svg id="play" xmlns="http://www.w3.org/2000/svg" width="40.302" height="40.302" viewBox="0 0 46.302 46.302">
-                                            <g id="Group_193" data-name="Group 193" transform="translate(0 0)">
-                                            <path id="Path_116" data-name="Path 116" d="M39.521,6.781a23.151,23.151,0,0,0-32.74,32.74,23.151,23.151,0,0,0,32.74-32.74ZM23.151,44.457A21.306,21.306,0,1,1,44.457,23.151,21.33,21.33,0,0,1,23.151,44.457Z" fill="currentColor"/>
-                                            <g id="Group_188" data-name="Group 188" transform="translate(15.588 11.19)">
-                                                <g id="Group_187" data-name="Group 187">
-                                                <path id="Path_117" data-name="Path 117" d="M190.3,133.213l-13.256-8.964a3,3,0,0,0-4.674,2.482v17.929a2.994,2.994,0,0,0,4.674,2.481l13.256-8.964a3,3,0,0,0,0-4.963Zm-1.033,3.435-13.256,8.964a1.151,1.151,0,0,1-1.8-.953V126.73a1.134,1.134,0,0,1,.611-1.017,1.134,1.134,0,0,1,1.185.063l13.256,8.964a1.151,1.151,0,0,1,0,1.907Z" transform="translate(-172.366 -123.734)" fill="currentColor"/>
-                                                </g>
-                                            </g>
-                                            <g id="Group_190" data-name="Group 190" transform="translate(28.593 5.401)">
-                                                <g id="Group_189" data-name="Group 189">
-                                                <path id="Path_118" data-name="Path 118" d="M328.31,70.492a18.965,18.965,0,0,0-10.886-10.708.922.922,0,1,0-.653,1.725,17.117,17.117,0,0,1,9.825,9.664.922.922,0,1,0,1.714-.682Z" transform="translate(-316.174 -59.724)" fill="currentColor"/>
-                                                </g>
-                                            </g>
-                                            <g id="Group_192" data-name="Group 192" transform="translate(22.228 4.243)">
-                                                <g id="Group_191" data-name="Group 191">
-                                                <path id="Path_119" data-name="Path 119" d="M249.922,47.187a19.08,19.08,0,0,0-3.2-.27.922.922,0,0,0,0,1.845,17.245,17.245,0,0,1,2.889.243.922.922,0,1,0,.31-1.818Z" transform="translate(-245.801 -46.917)" fill="currentColor"/>
-                                                </g>
-                                            </g>
-                                            </g>
-                                        </svg>
-                                        <span class="visually-hidden">Video Play</span>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -889,7 +863,7 @@ require ('includes/products.php');
                 <div class="row row-cols-md-2 row-cols-1 mb--n28">
                     <div class="col mb-28">
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner5.png" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="shop.php"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner5.png" alt="banner-img">
                                 <div class="banner__items--content">
                                     <span class="banner__items--content__subtitle d-none d-lg-block">Pick Your Items</span>
                                     <h2 class="banner__items--content__title h3">Up to 25% Off Order Now</h2>
@@ -900,7 +874,7 @@ require ('includes/products.php');
                     </div>
                     <div class="col mb-28">
                         <div class="banner__items position__relative">
-                            <a class="banner__items--thumbnail " href="shop.html"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner6.png" alt="banner-img">
+                            <a class="banner__items--thumbnail " href="shop.php"><img class="banner__items--thumbnail__img banner__img--max__height" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner6.png" alt="banner-img">
                                 <div class="banner__items--content">
                                     <span class="banner__items--content__subtitle d-none d-lg-block">Special offer</span>
                                     <h2 class="banner__items--content__title h3">Up to 35% Off Order Now</h2>
@@ -924,7 +898,7 @@ require ('includes/products.php');
                 <div class="row row-cols-1">
                     <div class="col">
                         <div class="banner__section--inner position__relative">
-                            <a class="banner__items--thumbnail display-block" href="shop.html"><img class="banner__items--thumbnail__img banner__img--height__md display-block" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner-bg2.png" alt="banner-img">
+                            <a class="banner__items--thumbnail display-block" href="shop.php"><img class="banner__items--thumbnail__img banner__img--height__md display-block" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/banner/banner-bg2.png" alt="banner-img">
                                 <div class="banner__content--style2">
                                     <h2 class="banner__content--style2__title text-white">Need Winter Boots? </h2>
                                     <p class="banner__content--style2__desc">Benefit from special privileges defined for you with Rubio sed do You can enter our discount coupons in the shopping cart. aliqua enim ad minim veniam, quis nostrud exercitation </p>
@@ -941,87 +915,6 @@ require ('includes/products.php');
             </div>
         </section>
         <!-- End banner section -->
-
-        <!-- Start blog section -->
-        <section class="blog__section section--padding pt-0">
-            <div class="container-fluid">
-                <div class="section__heading text-center mb-40">
-                    <h2 class="section__heading--maintitle">From The Blog</h2>
-                </div>
-                <div class="blog__section--inner blog__swiper--activation swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link" href="blog-details.html"><img class="blog__thumbnail--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/blog/blog1.png" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <span class="blog__content--meta">February 03, 2022</span>
-                                    <h3 class="blog__content--title"><a href="blog-details.html">Fashion Trends In 2021 Styles,
-                                        Colors, Accessories</a></h3>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link" href="blog-details.html"><img class="blog__thumbnail--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/blog/blog2.png" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <span class="blog__content--meta">February 03, 2022</span>
-                                    <h3 class="blog__content--title"><a href="blog-details.html">Meet the Woman Behind Cool
-                                        Ethical Label Refor </a></h3>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link" href="blog-details.html"><img class="blog__thumbnail--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/blog/blog3.png" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <span class="blog__content--meta">February 03, 2022</span>
-                                    <h3 class="blog__content--title"><a href="blog-details.html">Lauryn Hill Could Make Tulle
-                                        Skirt and Cowboy</a></h3>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link" href="blog-details.html"><img class="blog__thumbnail--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/blog/blog4.png" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <span class="blog__content--meta">February 03, 2022</span>
-                                    <h3 class="blog__content--title"><a href="blog-details.html">Fashion Trends In 2021 Styles,
-                                        Colors, Accessories</a></h3>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link" href="blog-details.html"><img class="blog__thumbnail--img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/blog/blog2.png" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <span class="blog__content--meta">February 03, 2022</span>
-                                    <h3 class="blog__content--title"><a href="blog-details.html">Lauryn Hill Could Make Tulle
-                                        Skirt and Cowboy</a></h3>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper__nav--btn swiper-button-next"></div>
-                    <div class="swiper__nav--btn swiper-button-prev"></div>
-                </div>
-            </div>
-        </section>
-        <!-- End blog section -->
 
     </main>
 

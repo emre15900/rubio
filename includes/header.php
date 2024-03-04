@@ -38,7 +38,7 @@ if (isset($_COOKIE['wishlist'])) {
           <div class="header__topbar--inner d-flex align-items-center justify-content-between">
               <div class="header__shipping">
                   <ul class="header__shipping--wrapper d-flex">
-                      <li class="header__shipping--text text-white">+2347238261273</li>
+                      <li class="header__shipping--text text-white"><?= CONTACT_PHONE; ?></li>
                       <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/bus.png" alt="bus-icon"> Track Your Order</li>
                       <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/email.png" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:info@rubio.shopping">info@rubio.shopping</a></li>
                   </ul>
@@ -176,12 +176,12 @@ if (isset($_COOKIE['wishlist'])) {
                           <li class="header__menu--items style2">
                               <a class="header__menu--link" href="about.php">About Us </a>
                           </li>
-                            <li class="header__menu--items style2">
+                            <!-- <li class="header__menu--items style2">
                               <a class="header__menu--link" href="blog.php">Blog
 
                               </a>
 
-                          </li>
+                          </li> -->
 
 
                           <li class="header__menu--items style2">
@@ -254,12 +254,12 @@ if (isset($_COOKIE['wishlist'])) {
                           <li class="header__menu--items">
                               <a class="header__menu--link" href="about.php">About Us </a>
                           </li>
-                          <li class="header__menu--items">
+                          <!-- <li class="header__menu--items">
                               <a class="header__menu--link" href="blog.php">Blog
 
                               </a>
 
-                          </li>
+                          </li> -->
 
 
                           <li class="header__menu--items">
@@ -290,9 +290,9 @@ if (isset($_COOKIE['wishlist'])) {
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/shop.php">Shop</a>
                   </li>
-                  <li class="offcanvas__menu_li">
+                  <!-- <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="blog.php">Blog</a>
-                  </li>
+                  </li> -->
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="#">Pages</a>
                       <ul class="offcanvas__sub_menu">

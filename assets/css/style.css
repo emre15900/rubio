@@ -6,7 +6,7 @@
   Version: 1.0.0
 
   ----------------------------
-  [Table of contents CSS] 
+  [Table of contents CSS]
   ----------------------------
 
     1. Base CSS
@@ -14,7 +14,7 @@
     3. Slider css
     4. Product card css
     5. Banner css
-    6. Blog css 
+    6. Blog css
     7. Testimonial css
     8. Featured services css
     9. Footer css
@@ -3865,11 +3865,12 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-/* 
-    3. Slider css 
+/*
+    3. Slider css
 */
+/* https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider1.png */
 .home1__slider--bg {
-  background: url(https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider1.png);
+  background: url('../img/slider/new-slide-0.webp');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -3882,8 +3883,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+/* https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider2.png */
 .home1__slider--bg.two {
-  background: url(https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider2.png);
+  background: url('../img/slider/new-slide-1.webp');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -3896,8 +3898,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+/* https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider3.png */
 .home1__slider--bg.three {
-  background: url(https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/slider/home1-slider3.png);
+  background: url('../img/slider/new-slide-2.webp');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -3912,6 +3915,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .hero__slider--items {
   position: relative;
+  min-height: 640px;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero__slider--items {
+    min-height: 480px;
+  }
 }
 
 .hero__slider--items__inner {
@@ -4223,8 +4233,8 @@ input[type="number"]::-webkit-outer-spin-button {
   padding-left: 0;
 }
 
-/* 
-    4. Product card css 
+/*
+    4. Product card css
 */
 .swiper:hover .swiper__nav--btn {
   opacity: 1;
@@ -4859,7 +4869,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /*
-   5. Banner css 
+   5. Banner css
 */
 .banner__items--thumbnail {
   display: block;
@@ -6097,8 +6107,8 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-/* 
-    6. Blog css 
+/*
+    6. Blog css
 */
 .blog__items:hover .blog__thumbnail--img {
   -webkit-transform: scale(1.05);
@@ -6257,7 +6267,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-/* 
+/*
     7. Testimonial css
 */
 @media only screen and (max-width: 767px) {
@@ -12675,7 +12685,7 @@ details > summary::-webkit-details-marker {
   }
 }
 
-/* 
+/*
     29. Newsletter popup css
 */
 /* ANIMATIONS

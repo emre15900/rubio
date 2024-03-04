@@ -81,7 +81,7 @@ $total = [];
                                     <div class="checkout__discount--code">
                                         <form class="d-flex" action="#">
                                             <label>
-                                                <input class="checkout__discount--code__input--field border-radius-5" placeholder="Gift card or discount code"  type="text">
+                                                <input required="" class="checkout__discount--code__input--field border-radius-5" placeholder="Gift card or discount code"  type="text">
                                             </label>
                                             <button class="checkout__discount--code__btn primary__btn border-radius-5" type="submit">Apply</button>
                                         </form>
@@ -143,11 +143,11 @@ $total = [];
                                     <div class="customer__information">
                                         <div class="checkout__email--phone mb-12">
                                         <label>
-                                                <input class="checkout__input--field border-radius-5" placeholder="Email or mobile phone mumber"  type="text">
+                                                <input required="" class="checkout__input--field border-radius-5" placeholder="Email or mobile phone mumber"  type="text">
                                         </label>
                                         </div>
                                         <div class="checkout__checkbox">
-                                            <input class="checkout__checkbox--input" id="check1" type="checkbox">
+                                            <input required="" class="checkout__checkbox--input" id="check1" type="checkbox">
                                             <span class="checkout__checkbox--checkmark"></span>
                                             <label class="checkout__checkbox--label" for="check1">
                                                 Email me with news and offers</label>
@@ -163,42 +163,42 @@ $total = [];
                                             <div class="col-lg-6 mb-12">
                                                 <div class="checkout__input--list ">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="First name (optional)"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="First name (optional)"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="Last name"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="Last name"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-12 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="Company (optional)"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="Company (optional)"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-12 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="Address1"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="Address1"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-12 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="Apartment, suite, etc. (optional)"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="Apartment, suite, etc. (optional)"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-12 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="City"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="City"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
@@ -219,13 +219,13 @@ $total = [];
                                             <div class="col-lg-6 mb-12">
                                                 <div class="checkout__input--list">
                                                     <label>
-                                                        <input class="checkout__input--field border-radius-5" placeholder="Postal code"  type="text">
+                                                        <input required="" class="checkout__input--field border-radius-5" placeholder="Postal code"  type="text">
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="checkout__checkbox">
-                                            <input class="checkout__checkbox--input" id="check2" type="checkbox">
+                                            <input required="" class="checkout__checkbox--input" id="check2" type="checkbox">
                                             <span class="checkout__checkbox--checkmark"></span>
                                             <label class="checkout__checkbox--label" for="check2">
                                                 Save this information for next time</label>
@@ -233,13 +233,13 @@ $total = [];
                                     </div>
                                 </div>
                                 <div class="checkout__content--step__footer d-flex align-items-center">
-                                    <a class="continue__shipping--btn primary__btn border-radius-5" href="checkout-2.html">Continue To Shipping</a>
+                                    <a class="continue__shipping--btn primary__btn border-radius-5" href="<?= BASE_URL; ?>/orders.php">Continue</a>
                                     <a class="previous__link--content" href="<?= BASE_URL; ?>/cart.php">Return to cart</a>
                                 </div>
                             </form>
                         </main>
                         <footer class="main__footer checkout__footer">
-                            <p class="copyright__content">Copyright © 2022 <a class="copyright__content--link text__primary" href="index.html">Suruchi</a> . All Rights Reserved.Design By Rubio</p>
+                            <p class="copyright__content">Copyright © 2024 <a class="copyright__content--link text__primary" href="index.html">Suruchi</a> . All Rights Reserved.Design By Rubio</p>
                         </footer>
                     </div>
                     <aside class="checkout__sidebar sidebar">
@@ -272,7 +272,7 @@ $total = [];
                         <div class="checkout__discount--code">
                             <form class="d-flex" action="#">
                                 <label>
-                                    <input class="checkout__discount--code__input--field border-radius-5" placeholder="Gift card or discount code"  type="text">
+                                    <input required="" class="checkout__discount--code__input--field border-radius-5" placeholder="Gift card or discount code"  type="text">
                                 </label>
                                 <button class="checkout__discount--code__btn primary__btn border-radius-5" type="submit">Apply</button>
                             </form>
