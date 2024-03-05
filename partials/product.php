@@ -1,7 +1,7 @@
 
 <?php
 
-$currency = $product['currency'] ?? 'NGN';
+$currency = $_SESSION['currency'] ?? 'NGN';
 $price = $product['price'];
 $percentage_off = floatval($product['percentage_off'] ?? '25');
 
@@ -28,9 +28,9 @@ $percentage_off = floatval($product['percentage_off'] ?? '25');
       </span>
       <h3 class="product__items--content__title h4"><a href="<?= BASE_URL; ?>/product.php?id=<?= $product['id']; ?>"><?= $product['name'] ;?></a></h3>
       <div class="product__items--price">
-          <span class="current__price"><?= $currency.number_format($price) ;?></span>
+          <span class="current__price"><?= $currency.convert_currency($price) ;?></span>
           <span class="price__divided"></span>
-          <span class="old__price"><?= $currency.number_format($price + ceil(($percentage_off/100) * floatval($price))); ?></span>
+          <span class="old__price"><?= $currency.convert_currency($price + ceil(($percentage_off/100) * floatval($price))); ?></span>
       </div>
       <ul class="rating product__rating d-flex">
           <li class="rating__list">

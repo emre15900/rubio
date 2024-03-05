@@ -16,7 +16,7 @@ if(!$product) {
   die('Product not found. Try again.');
 }
 
-$currency = $product['currency'] ?? 'NGN';
+$currency = $_SESSION['currency'] ?? 'NGN';
 $price = $product['price'];
 $percentage_off = floatval($product['percentage_off'] ?? '25');
 
@@ -107,9 +107,9 @@ $percentage_off = floatval($product['percentage_off'] ?? '25');
                             <form action="javascripts:;">
                                 <h2 class="product__details--info__title mb-15"><?= $product['name']; ?></h2>
                                 <div class="product__details--info__price mb-10">
-                                    <span class="current__price"><?= 'NGN'.number_format($product['price']); ?></span>
+                                    <span class="current__price"><?= $currency.convert_currency($product['price']); ?></span>
                                     <span class="price__divided"></span>
-                                    <span class="old__price"><?= $currency.number_format($price + ceil(($percentage_off/100) * floatval($price))); ?></span>
+                                    <span class="old__price"><?= $currency.convert_currency($price + ceil(($percentage_off/100) * floatval($price))); ?></span>
                                 </div>
                                 <!-- <div class="product__details--info__rating d-flex align-items-center mb-15">
                                     <ul class="rating d-flex justify-content-center">

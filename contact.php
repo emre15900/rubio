@@ -258,7 +258,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     </svg>
                                 </div>
                                 <div class="contact__info--content">
-                                    <p class="contact__info--content__desc text-white"> <a href="mailto:info@rubio.shopping"> info@rubio.shopping</a> </p>
+                                    <p class="contact__info--content__desc text-white">
+                                        <a href="mailto:info@rubio.shopping"> info@rubio.shopping</a>
+                                        <a href="mailto:support@rubio.shopping"> support@rubio.shopping</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -271,9 +274,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     </svg>
                                 </div>
                                 <div class="contact__info--content">
-                                    <p class="contact__info--content__desc text-white"> PIKEVILLE NIGERIA LIMITED <br>
+                                    <p class="contact__info--content__desc text-white"> RUBIO SHOPPING<br>
                                         Register Number : 1927300 <br>
-                                        Address : 79/80 AWOLOWO WAY, IKEJA, IKEJA, LAGOS STATE</p>
+                                        Address : UNIT 2,VIEWPOINT PLAZA, AJAH., IKEJA, IKEJA, LAGOS STATE , NIGERIA</p>
                                 </div>
                             </div>
                         </div>

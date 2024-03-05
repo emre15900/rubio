@@ -14,6 +14,7 @@ if (isset($_COOKIE['cart_items'])) {
 }
 
 $total = [];
+$currency = $_SESSION['currency'] ?? 'NGN';
 
 ?>
 
@@ -28,6 +29,10 @@ $total = [];
     <!-- Start preloader -->
         <?php include ('includes/preloader.php'); ?>
     <!-- End preloader -->
+
+    <!-- Start header area -->
+        <?php include ('includes/header.php'); ?>
+    <!-- End header area -->
 
     <!-- Start checkout page area -->
     <div class="checkout__page--area">
@@ -91,18 +96,18 @@ $total = [];
                                             <tbody class="checkout__total--body">
                                                 <tr class="checkout__total--items">
                                                     <td class="checkout__total--title text-left">Subtotal </td>
-                                                    <td class="checkout__total--amount text-right">NGN<?= array_sum($total); ?></td>
+                                                    <td class="checkout__total--amount text-right"><?= $currency.convert_currency(array_sum($total)); ?></td>
                                                 </tr>
                                                 <?php $shipping = rand(7, 13); ?>
                                                 <tr class="checkout__total--items">
                                                     <td class="checkout__total--title text-left">Shipping</td>
-                                                    <td class="checkout__total--calculated__text text-right">NGN<?= $shipping; ?></td>
+                                                    <td class="checkout__total--calculated__text text-right"><?= $currency.convert_currency($shipping); ?></td>
                                                 </tr>
                                             </tbody>
                                             <tfoot class="checkout__total--footer">
                                                 <tr class="checkout__total--footer__items">
                                                     <td class="checkout__total--footer__title checkout__total--footer__list text-left">Total </td>
-                                                    <td class="checkout__total--footer__amount checkout__total--footer__list text-right">NGN<?= array_sum($total) + $shipping; ?></td>
+                                                    <td class="checkout__total--footer__amount checkout__total--footer__list text-right"><?= $currency.convert_currency(array_sum($total) + $shipping); ?></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -262,7 +267,7 @@ $total = [];
                                                 </div>
                                             </td>
                                             <td class="cart__table--body__list">
-                                                <span class="cart__price">NGN<?= $item['price']; ?></span>
+                                                <span class="cart__price"><?= $currency.convert_currency($item['price']); ?></span>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -282,7 +287,7 @@ $total = [];
                                 <tbody class="checkout__total--body">
                                     <tr class="checkout__total--items">
                                         <td class="checkout__total--title text-left">Subtotal </td>
-                                        <td class="checkout__total--amount text-right">NGN<?= array_sum($total); ?></td>
+                                        <td class="checkout__total--amount text-right"><?= $currency.convert_currency(array_sum($total)); ?></td>
                                     </tr>
                                     <tr class="checkout__total--items">
                                         <td class="checkout__total--title text-left">Shipping</td>
@@ -292,7 +297,7 @@ $total = [];
                                 <tfoot class="checkout__total--footer">
                                     <tr class="checkout__total--footer__items">
                                         <td class="checkout__total--footer__title checkout__total--footer__list text-left">Total </td>
-                                        <td class="checkout__total--footer__amount checkout__total--footer__list text-right">NGN<?= array_sum($total); ?></td>
+                                        <td class="checkout__total--footer__amount checkout__total--footer__list text-right"><?= $currency.convert_currency(array_sum($total)); ?></td>
                                     </tr>
                                 </tfoot>
                             </table>

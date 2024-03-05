@@ -1,15 +1,53 @@
 <?php
 
+include ('includes/session.php');
+
 if (!function_exists('str_contains')) {
-    function str_contains(string $haystack, string $needle): bool
-    {
+    function str_contains(string $haystack, string $needle): bool {
         return '' === $needle || false !== strpos($haystack, $needle);
+    }
+}
+
+if(isset($_GET['currency'])) {
+    $_SESSION['currency'] = $_GET['currency'];
+}else {
+    if(!isset($_SESSION['currency'])) {
+        $_SESSION['currency'] = 'NGN';
+    }
+}
+
+$currency = $_SESSION['currency'] ?? 'NGN';
+
+if (!function_exists('convert_currency')) {
+    function convert_currency($amount) {
+
+        $currency = $_SESSION['currency'] ?? 'NGN';
+        if(strtoupper($currency) === 'USD') {
+            $amount = $amount / 1657;
+        }
+
+        return number_format($amount);
     }
 }
 
 $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']
               === 'on' ? "https" : "http") . "://" .
               $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+
+
+$url = $_SERVER['REQUEST_URI'];
+// die($url);
+
+function url_code($link, $code) {
+    if(str_contains($link, '?')) {
+
+        $link = $link."&currency=$code";
+    }else {
+        $link = $link."?currency=$code";
+    }
+
+    return $link;
+}
 
 if (isset($_COOKIE['cart_items'])) {
     $cart_items_json = $_COOKIE['cart_items'];
@@ -28,9 +66,11 @@ if (isset($_COOKIE['wishlist'])) {
 }else {
     $wishlist_count = isset($_GET['product_id']) && str_contains($link, 'wishlist.php') ? 1 : 0;
 }
-?>
 
-<?php include ('includes/session.php'); ?>
+$currencies = ['USD' => 'US Dollar', 'NGN' => 'Nigerian Naira']; $flag = strtolower(substr($currency, 0, 2));
+
+
+?>
 
 <header class="header__section">
   <div class="header__topbar bg__secondary">
@@ -39,49 +79,47 @@ if (isset($_COOKIE['wishlist'])) {
               <div class="header__shipping">
                   <ul class="header__shipping--wrapper d-flex">
                       <li class="header__shipping--text text-white"><?= CONTACT_PHONE; ?></li>
-                      <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/bus.png" alt="bus-icon"> Track Your Order</li>
                       <li class="header__shipping--text text-white d-sm-2-none"><img class="header__shipping--text__icon" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/email.png" alt="email-icon"> <a class="header__shipping--text__link" href="mailto:info@rubio.shopping">info@rubio.shopping</a></li>
                   </ul>
               </div>
               <div class="language__currency d-none d-lg-block">
                   <ul class="d-flex align-items-center">
                       <li class="language__currency--list">
-                          <a class="language__switcher text-white" href="#">
+                          <a class="language__switcher text-white" href="javascript:;">
                               <img class="language__switcher--icon__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/language-icon.png" alt="currency">
                               <span>English</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                  <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                              </svg>
                           </a>
-                          <div class="dropdown__language">
-                              <ul>
-                                  <li class="language__items"><a class="language__text" href="#">France</a></li>
-                                  <li class="language__items"><a class="language__text" href="#">Russia</a></li>
-                                  <li class="language__items"><a class="language__text" href="#">Spanish</a></li>
-                              </ul>
-                          </div>
                       </li>
                       <li class="language__currency--list">
-                          <a class="account__currency--link text-white" href="#">
+                          <a class="account__currency--link text-white" href="javascript:;">
                               <img
-                                src="https://flagcdn.com/w20/ng.png"
-                                srcset="https://flagcdn.com/w40/ng.png 2x"
+                                src="https://flagcdn.com/w20/<?= $flag; ?>.png"
+                                srcset="https://flagcdn.com/w40/<?= $flag; ?>.png 2x"
                                 width="20"
-                                alt="Nigeria">
-                              <span>₦ Nigerian Naira</span>
+                                alt="">
+                              <span><?= $currency; ?></span>
                               <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                  <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
+                                <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                               </svg>
                           </a>
                           <div class="dropdown__currency">
-                              <ul>
-                                  <li class="currency__items"><a class="currency__text" href="#">NGN</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">CAD</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">GBP</a></li>
-                              </ul>
-                          </div>
+                            <?php if(empty($currencies)): ?>
+                            <?php else: ?>
+                                <ul>
+                                    <?php foreach($currencies as $code => $name): ?>
+                                        <?php
+                                            $code = strtoupper($code);
+
+                                        ?>
+                                        <li class="currency__items">
+                                            <a class="currency__text" href="<?= url_code($url, $code); ?>">
+                                                <?= $code; ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                           </div>
                       </li>
                   </ul>
               </div>
@@ -127,13 +165,13 @@ if (isset($_COOKIE['wishlist'])) {
               </div>
               <div class="header__account header__sticky--none">
                   <ul class="d-flex">
-                      <!-- <li class="header__account--items">
+                      <li class="header__account--items">
 
-                          <a class="header__account--btn" href="my-account.php">
+                          <a class="header__account--btn" href="<?= BASE_URL; ?>/login.php">
                               <svg xmlns="http://www.w3.org/2000/svg"  width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                               <span class="header__account--btn__text">My Account</span>
                           </a>
-                      </li> -->
+                      </li>
                       <li class="header__account--items d-none d-lg-block">
                           <a class="header__account--btn" href="<?= BASE_URL; ?>/wishlist.php">
                               <svg  xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
@@ -200,14 +238,8 @@ if (isset($_COOKIE['wishlist'])) {
               </div>
               <div class="header__account header__account2 header__sticky--block">
                   <ul class="d-flex">
-                      <li class="header__account--items header__account2--items  header__account--search__items d-none d-lg-block">
-                          <a class="header__account--btn search__open--btn" href="javascript:void(0)" data-offcanvas>
-                              <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
-                              <span class="visually-hidden">Search</span>
-                          </a>
-                      </li>
                       <li class="header__account--items header__account2--items">
-                          <a class="header__account--btn" href="my-account.php">
+                          <a class="header__account--btn" href="<?= BASE_URL; ?>/login.php">
                               <svg xmlns="http://www.w3.org/2000/svg"  width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                               <span class="visually-hidden">My Account</span>
                           </a>
@@ -290,66 +322,59 @@ if (isset($_COOKIE['wishlist'])) {
                   <li class="offcanvas__menu_li">
                       <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/shop.php">Shop</a>
                   </li>
-                  <!-- <li class="offcanvas__menu_li">
-                      <a class="offcanvas__menu_item" href="blog.php">Blog</a>
-                  </li> -->
                   <li class="offcanvas__menu_li">
-                      <a class="offcanvas__menu_item" href="#">Pages</a>
-                      <ul class="offcanvas__sub_menu">
-                          <li class="offcanvas__sub_menu_li"><a href="about.php" class="offcanvas__sub_menu_item">About Us</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/contact.php" class="offcanvas__sub_menu_item">Contact Us</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/cart.php" class="offcanvas__sub_menu_item">Cart Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="portfolio.php" class="offcanvas__sub_menu_item">Portfolio Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/wishlist.php" class="offcanvas__sub_menu_item">Wishlist Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="<?= BASE_URL; ?>/login.php" class="offcanvas__sub_menu_item">Login Page</a></li>
-                          <li class="offcanvas__sub_menu_li"><a href="404.php" class="offcanvas__sub_menu_item">Error Page</a></li>
-                      </ul>
-                  </li>
+                    <a href="<?= BASE_URL; ?>/cart.php" class="offcanvas__menu_item">Cart</a>
+                </li>
+                  <li class="offcanvas__menu_li">
+                    <a href="<?= BASE_URL; ?>/wishlist.php" class="offcanvas__menu_item">Wishlist</a>
+                </li>
                   <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="about.php">About</a></li>
-                  <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/contact.php">Contact</a></li>
+                  <li class="offcanvas__menu_li">
+                    <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/contact.php">Contact</a>
+                </li>
+                <li class="offcanvas__menu_li">
+                    <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/login.php">Login</a>
+                </li>
+                <li class="offcanvas__menu_li">
+                    <a class="offcanvas__menu_item" href="<?= BASE_URL; ?>/signup.php">Register</a>
+                </li>
               </ul>
-              <div class="offcanvas__account--items">
-                  <a class="offcanvas__account--items__btn d-flex align-items-center" href="<?= BASE_URL; ?>/login.php">
-                  <span class="offcanvas__account--items__icon">
-                      <svg xmlns="http://www.w3.org/2000/svg"  width="20.51" height="19.443" viewBox="0 0 512 512"><path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
-                      </span>
-                  <span class="offcanvas__account--items__label">Login / Register</span>
-                  </a>
-              </div>
+              <br>
               <div class="language__currency">
                   <ul class="d-flex align-items-center">
                       <li class="language__currency--list">
-                          <a class="offcanvas__language--switcher" href="#">
+                          <a class="offcanvas__language--switcher" href="javascript:;">
                               <img class="language__switcher--icon__img" src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/language-icon.png" alt="currency">
-                              <span>English</span>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                  <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                              </svg>
+                              <small>English</small>
                           </a>
-                          <div class="offcanvas__dropdown--language">
-                              <ul>
-                                  <li class="language__items"><a class="language__text" href="#">France</a></li>
-                                  <li class="language__items"><a class="language__text" href="#">Russia</a></li>
-                                  <li class="language__items"><a class="language__text" href="#">Spanish</a></li>
-                              </ul>
-                          </div>
                       </li>
                       <li class="language__currency--list">
-                          <a class="offcanvas__account--currency__menu" href="#">
-                              <img src="https://risingtheme.com/html/demo-suruchi-v1/suruchi/assets/img/icon/usd-icon.png" alt="currency">
-                              <span>$ US Dollar</span>
+                          <a class="offcanvas__account--currency__menu" href="javascript:;">
+                              <img
+                                src="https://flagcdn.com/w20/<?= $flag; ?>.png"
+                                srcset="https://flagcdn.com/w40/<?= $flag; ?>.png 2x"
+                                width="20"
+                                alt="">
+                              <small><?= $currency; ?></small>
                               <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                  <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
+                                <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                               </svg>
                           </a>
                           <div class="offcanvas__account--currency__submenu">
-                              <ul>
-                                  <li class="currency__items"><a class="currency__text" href="#">CAD</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
-                                  <li class="currency__items"><a class="currency__text" href="#">GBP</a></li>
-                              </ul>
-                          </div>
+                            <?php if(empty($currencies)): ?>
+                            <?php else: ?>
+                                <ul>
+                                    <?php foreach($currencies as $code => $name): ?>
+                                        <?php $code = strtoupper($code); ?>
+                                        <li class="currency__items">
+                                            <a class="currency__text" href="<?= url_code($url, $code); ?>">
+                                                <small><?= $code; ?></small>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                           </div>
                       </li>
                   </ul>
               </div>
@@ -377,14 +402,14 @@ if (isset($_COOKIE['wishlist'])) {
               <span class="offcanvas__stikcy--toolbar__label">Shop</span>
               </a>
           </li>
-          <li class="offcanvas__stikcy--toolbar__list ">
+          <!-- <li class="offcanvas__stikcy--toolbar__list ">
               <a class="offcanvas__stikcy--toolbar__btn search__open--btn" href="javascript:void(0)" data-offcanvas>
                   <span class="offcanvas__stikcy--toolbar__icon">
                       <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>
                   </span>
               <span class="offcanvas__stikcy--toolbar__label">Search</span>
               </a>
-          </li>
+          </li> -->
           <li class="offcanvas__stikcy--toolbar__list">
               <a class="offcanvas__stikcy--toolbar__btn minicart__open--btn" href="<?= BASE_URL; ?>/cart.php" data-offcanvas>
                   <span class="offcanvas__stikcy--toolbar__icon">

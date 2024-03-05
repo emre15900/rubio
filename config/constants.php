@@ -11,5 +11,5 @@ if(!defined('BASE_URL')) {
 }
 
 if(!defined('CONTACT_PHONE')) {
-  define('CONTACT_PHONE', '+2347238261273');
+  define('CONTACT_PHONE', '+234 4523649150');
 }
