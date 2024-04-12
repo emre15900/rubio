@@ -18,7 +18,7 @@ Email: <a href="mailto:info@rubio.shopping">info@rubio.shopping</a>  | <a href="
 <br>
 Telephone: <a href="tel:<?= CONTACT_PHONE; ?>"><?= CONTACT_PHONE; ?></a>
 </p>
-                        <div class="footer__social">
+                        <!-- <div class="footer__social">
                             <h4 class="social__title text-ofwhite mb-15">Follow Us</h4>
                             <ul class="social__shear d-flex">
                                 <li class="social__shear--list">
@@ -54,7 +54,7 @@ Telephone: <a href="tel:<?= CONTACT_PHONE; ?>"><?= CONTACT_PHONE; ?></a>
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="footer__widget--menu__wrapper d-flex footer__widget--width">
