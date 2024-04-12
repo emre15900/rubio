@@ -211,13 +211,16 @@ $currency = $_SESSION['currency'] ?? 'NGN';
                                                 <div class="checkout__input--list checkout__input--select select">
                                                     <label class="checkout__select--label" for="country">Country/region</label>
                                                     <select class="checkout__input--select__field border-radius-5" id="country">
-                                                        <option value="1">India</option>
+                                                        <option value="1">Nigeria</option>
                                                         <option value="2">United States</option>
-                                                        <option value="3">Netherlands</option>
+                                                        <option value="3">Turkey</option>
+                                                        <option value="4">Russia</option>
+                                                        <option value="5">Kenya</option>
+                                                        <option value="6">United Kingdom</option>
+                                                        <option value="7">Zimbabwe</option>
+                                                        <option value="8">India</option>
+                                                        <option value="9">Netherlands</option>
                                                         <option value="4">Afghanistan</option>
-                                                        <option value="5">Islands</option>
-                                                        <option value="6">Albania</option>
-                                                        <option value="7">Antigua Barbuda</option>
                                                     </select>
                                                 </div>
                                             </div>
